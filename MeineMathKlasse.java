@@ -17,8 +17,8 @@ public class MeineMathKlasse
 
   public static String teilersumme(int zahl) {
     check(zahl > 0, "Zahl muss positiv sein");
-    int teilersumme = 0;
-    for (int i = 1; i <= zahl; i++) {
+    int teilersumme = 1 + zahl;
+    for (int i = 2; i <= zahl / 2; i++) {
       if (zahl % i == 0)
       {
         teilersumme += i;
@@ -58,13 +58,13 @@ public class MeineMathKlasse
 
   public static String quadratischeGleichung (double p, double q) {
     double diskriminante;
-    diskriminante = Math.pow(p / 2, 2) - q;
+    diskriminante = ((p / 2.0) * (p / 2.0)) - q;
     System.out.println("Die Diskriminante ist gleich " + diskriminante);
     if (diskriminante >  0)
     {
       double x1, x2;
-      x1 = -(p / 2) + Math.sqrt(diskriminante);
-      x2 = -(p / 2) - Math.sqrt(diskriminante);
+      x1 = -(p / 2.0) + Math.sqrt(diskriminante);
+      x2 = -(p / 2.0) - Math.sqrt(diskriminante);
       return "Die Ergebnisse sind x1 :" +  x1 + " x2 :" + x2;
     }
     else if (diskriminante == 0)
@@ -114,7 +114,7 @@ public class MeineMathKlasse
     double aktueller_n_wert = (x - 1) / x;
     for (long i = 2; i <= n; i++)  {
       aktueller_n_wert = aktueller_n_wert * faktor; // Rechnet den n+1-ten Term dank des n-ten Terms
-      wert += aktueller_n_wert / i; 
+      wert += aktueller_n_wert / i;
     }
     return wert;
   }
