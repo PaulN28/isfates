@@ -1,3 +1,5 @@
+package version_finale;
+
 /**
 * MeineMathKlasse enthält ein paar mathematische Methoden
 *
@@ -11,8 +13,9 @@ public class MeineMathKlasse
   private static final int EINGABE_ISBN_LENGTH = 9;
 
   /**
-  * Die Methode teilersumme alle Teiler einer bestimmten Zahl, und gibt die Summe aus
-  * Das Schlüsselwort static dient dazu die Methode außerhalb der Klasse MeineMathKlasse aufzurufen
+  * Die Methode teilersumme alle Teiler einer bestimmten Zahl, und gibt die Summe aus.
+  * Das Schlüsselwort static dient dazu die Methode außerhalb der Klasse MeineMathKlasse aufzurufen.
+  * @param zahl Benutzer definierte Variable an der die Teilersumme ausgeführt wird. Die Zahl muss positiv und gerade sein.
   */
 
   public static String teilersumme(int zahl) {
@@ -28,9 +31,10 @@ public class MeineMathKlasse
   }
 
   /**
-  * Die Methode isbnPrüfziffer errechnet dank der 9 ersten Zahlen eine Prüfziffer
-  * Wenn die Prüfziffer gleich 10 ist, wird "X" ausgegeben
-  * Das Schlüsselwort static dient dazu die Methode außerhalb der Klasse MeineMathKlasse aufzurufen
+  * Die Methode isbnPrüfziffer errechnet dank der 9 ersten Zahlen eine Prüfziffer.
+  * Wenn die Prüfziffer gleich 10 ist, wird "X" ausgegeben.
+  * Das Schlüsselwort static dient dazu die Methode außerhalb der Klasse MeineMathKlasse aufzurufen.
+  * @param isbn Benutzer definierte Variable, die die 9 ersten Zahlen eines ISBN Codes darstellen.
   */
 
   public static String isbnPruefziffer (long isbn) {
@@ -51,9 +55,11 @@ public class MeineMathKlasse
   }
 
   /**
-  * Die Methode quadratischeGleichung löst eine Gleichung des zweiten Grades
-  * Es gibt drei verschiedene Fälle, die vom Vorzeichen der Diskriminante abhänging sind
-  * Das Schlüsselwort static dient dazu die Methode außerhalb der Klasse MeineMathKlasse aufzurufen
+  * Die Methode quadratischeGleichung löst eine Gleichung des zweiten Grades.
+  * Es gibt drei verschiedene Fälle, die vom Vorzeichen der Diskriminante abhänging sind.
+  * Das Schlüsselwort static dient dazu die Methode außerhalb der Klasse MeineMathKlasse aufzurufen.
+  * @param p stellt bei einer gLichung der Form: x² + px + q = 0, 'p' dar.
+  * @param q stellt bei einer gLichung der Form: x² + px + q = 0, 'q' dar.
   */
 
   public static String quadratischeGleichung (double p, double q) {
@@ -79,9 +85,9 @@ public class MeineMathKlasse
   }
 
   /**
-  * Iteriert über a, b und c um die Gleichung a^3 + b^3 = c^2 zu lösen
-  * @param limit Iterations Grenze
-  * @return Gibt die Zahlentriplets, die die Gleichung lösen, als Zeichenkette zurück
+  * Iteriert Ã¼ber a, b und c um die Gleichung a³ + b³ = c² zu lösen.
+  * @param limit Iterations Grenze.
+  * @return Gibt die Zahlentriplets, die die Gleichung lösen, als Zeichenkette zurück.
   */
   public static String a3b3c2(int limit) {
     int limit2 = limit * limit;
@@ -100,10 +106,10 @@ public class MeineMathKlasse
   }
 
   /**
-   * Errechnet den Wert der Summe von (x - 1) ^n / n* x ^n
-   * @param n Grad des letzten Term
-   * @param x Benutzer definierte Variable
-   * @return Gibt den Wert der Summe der Terms
+   * Errechnet den Wert der Summe von ((x - 1) ^n) / (n * (x ^n)).
+   * @param n Grad des letzten Term.
+   * @param x Benutzer definierte Variable.
+   * @return Gibt den Wert der Summe der Terms.
    */
 
   public static double folge (long n, double x) {
@@ -120,7 +126,7 @@ public class MeineMathKlasse
   }
 
   /**
-  * Prüft ob die Bedingung erfüllt wurde, wirft andersfalls eine Exception aus
+  * Prüft ob die Bedingung erfüllt wurde, wirft andersfalls eine Exception aus.
   */
   public static void check(boolean bedingung, String msg)
   {
