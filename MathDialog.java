@@ -14,6 +14,8 @@ public class MathDialog
   private static final int TEILERSUMME = 1;
   private static final int ISBNPRÜFZIFFER = 2;
   private static final int QUADRATISCHE_GLEICHUNG = 3;
+  private static final int A3B3C2 = 4;
+  private static final int FOLGE = 5;
   private static final int ENDE = 0;
 
   /**
@@ -48,10 +50,13 @@ public class MathDialog
   */
 
   private int einlesenFunktion() {
-    System.out.print(TEILERSUMME + ": Teilersumme; " +
-    ISBNPRÜFZIFFER + ": ISBN Prüfziffer; " +
-    QUADRATISCHE_GLEICHUNG + ": Quadratische Gleichung; " +
-    ENDE + ": beenden ");
+    System.out.print(
+        TEILERSUMME + ": Teilersumme; " +
+        ISBNPRÜFZIFFER + ": ISBN Prüfziffer; " +
+        QUADRATISCHE_GLEICHUNG + ": Quadratische Gleichung; " +
+        A3B3C2 + ": Zahlentriplet; " +
+        FOLGE + ": Folge; " +
+        ENDE + ": beenden ");
     return input.nextInt();
   }
 
@@ -65,32 +70,49 @@ public class MathDialog
     switch (funktion)
     {
       case ENDE:
-      System.out.println("Programmende");
-      break;
+        System.out.println("Programmende");
+        break;
 
       case TEILERSUMME:
-      System.out.println("Zahl : ");
-      input.nextLine();
-      int zahl = input.nextInt();
-      System.out.println(MeineMathKlasse.teilersumme(zahl));
-      break;
+        System.out.println("Zahl : ");
+        input.nextLine();
+        int zahl = input.nextInt();
+        System.out.println(MeineMathKlasse.teilersumme(zahl));
+        break;
 
       case ISBNPRÜFZIFFER:
-      System.out.println("ISBN : ");
-      input.nextLine();
-      long isbn = input.nextLong();
-      System.out.println(MeineMathKlasse.isbnPrüfziffer(isbn));
-      break;
+        System.out.println("ISBN : ");
+        input.nextLine();
+        long isbn = input.nextLong();
+        System.out.println(MeineMathKlasse.isbnPruefziffer(isbn));
+        break;
 
       case QUADRATISCHE_GLEICHUNG:
-      System.out.println("Eine quadratische Gleichung der Form : x² + px+ q = 0, mit p = ");
-      input.nextLine();
-      double p = input.nextDouble();
-      System.out.println("Und q = ");
-      input.nextLine();
-      double q = input.nextDouble();
-      System.out.println( MeineMathKlasse.quadratischeGleichung(p, q));
-      break;
+        System.out.println("Eine quadratische Gleichung der Form : x² + px+ q = 0, mit p = ");
+        input.nextLine();
+        double p = input.nextDouble();
+        System.out.println("Und q = ");
+        input.nextLine();
+        double q = input.nextDouble();
+        System.out.println( MeineMathKlasse.quadratischeGleichung(p, q));
+        break;
+
+      case A3B3C2:
+        System.out.println("Grenze : ");
+        input.nextLine();
+        int grenze = input.nextInt();
+        System.out.println(MeineMathKlasse.a3b3c2(grenze));
+        break;
+        
+      case FOLGE:
+        System.out.println("n : ");
+        input.nextLine();
+        long n = input.nextLong();
+        System.out.println("x : ");
+        input.nextLine();
+        double x = input.nextDouble();
+        System.out.println(MeineMathKlasse.folge(n, x));
+        break;
 
       default:
       System.out.println("Bitte wählen Sie eine existierende Methode");

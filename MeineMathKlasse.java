@@ -16,6 +16,7 @@ public class MeineMathKlasse
   */
 
   public static String teilersumme(int zahl) {
+    check(zahl > 0, "Zahl muss positiv sein");
     int teilersumme = 0;
     for (int i = 1; i <= zahl; i++) {
       if (zahl % i == 0)
@@ -32,21 +33,21 @@ public class MeineMathKlasse
   * Das Schlüsselwort static dient dazu die Methode außerhalb der Klasse MeineMathKlasse aufzurufen
   */
 
-  public static String isbnPrüfziffer (long isbn) {
+  public static String isbnPruefziffer (long isbn) {
     check(String.valueOf(isbn).length() == EINGABE_ISBN_LENGTH, "Eingabe muss 9-stellig sein");
     int summe = 0;
-    int prüfziffer;
+    int pruefziffer;
     for (int i = 9; i >= 1; i--)
     {
       summe += isbn % 10 * i;
       isbn /= 10;
     }
-    prüfziffer = summe % 11;
-    if (prüfziffer == 10)
+    pruefziffer = summe % 11;
+    if (pruefziffer == 10)
     {
       return "X";
     }
-    return String.valueOf(prüfziffer); // gibt die String Value eines Int aus
+    return String.valueOf(pruefziffer); // gibt die String Value eines Int aus
   }
 
   /**
@@ -78,8 +79,49 @@ public class MeineMathKlasse
   }
 
   /**
-   * Prüft ob die Bedingung erfüllt wurde, wirft andersfalls eine Exception aus
+  * Iteriert über a, b und c um die Gleichung a^3 + b^3 = c^2 zu lösen
+  * @param limit Iterations Grenze
+  * @return Gibt die Zahlentriplets, die die Gleichung lösen, als Zeichenkette zurück
+  */
+  public static String a3b3c2(int limit) {
+    int limit2 = limit * limit;
+    String result = "";
+    check(limit > 0, "Grenze muss eine positive Zahl sein");
+    for (int a = 1; 2*a*a*a < limit2 ; a ++) {   // 2 a^3 muss KLEINER als limit^2 sein, da c < limit ist
+      for (int b = a; b*b*b < limit2; b ++) {    // b^3 muss KLEINER als limit^2 sein, da c < limit ist
+        for (int c = 1; c < limit; c ++) {
+          if (a*a*a + b*b*b == c*c) {
+            result += "\n" + ("a : " + a + " b : " + b + " c : " + c) + "\n";
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  /**
+   * Errechnet den Wert der Summe von (x - 1) ^n / n* x ^n
+   * @param n Grad des letzten Term
+   * @param x Benutzer definierte Variable
+   * @return Gibt den Wert der Summe der Terms
    */
+
+  public static double folge (long n, double x) {
+    check(n > 0, "Geben Sie eine Naturliche Zahl an, bei 'n'");
+    check(x != 0, "x kann nicht null sein");
+    double wert = (x - 1) / x;
+    double faktor = (x - 1) / x;
+    double aktueller_n_wert = (x - 1) / x;
+    for (long i = 2; i <= n; i++)  {
+      aktueller_n_wert = aktueller_n_wert * faktor; // Rechnet den n+1-ten Term dank des n-ten Terms
+      wert += aktueller_n_wert / i; 
+    }
+    return wert;
+  }
+
+  /**
+  * Prüft ob die Bedingung erfüllt wurde, wirft andersfalls eine Exception aus
+  */
   public static void check(boolean bedingung, String msg)
   {
     if (!bedingung)
