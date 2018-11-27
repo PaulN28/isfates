@@ -1,7 +1,5 @@
-package version_finale;
-
 /**
-* MeineMathKlasse enthält ein paar mathematische Methoden
+* MeineMathKlasse enthaelt ein paar mathematische Methoden
 *
 * @author Paul NICOLAS und Nils GAMLIN
 * @version 14/11/18
@@ -14,8 +12,9 @@ public class MeineMathKlasse
 
   /**
   * Die Methode teilersumme alle Teiler einer bestimmten Zahl, und gibt die Summe aus.
-  * Das Schlüsselwort static dient dazu die Methode außerhalb der Klasse MeineMathKlasse aufzurufen.
-  * @param zahl Benutzer definierte Variable an der die Teilersumme ausgeführt wird. Die Zahl muss positiv und gerade sein.
+  * Das Schluesselwort static dient dazu die Methode ausserhalb der Klasse MeineMathKlasse aufzurufen.
+  * @param zahl Benutzer definierte Variable an der die Teilersumme ausgefuehrt wird. Die Zahl muss positiv und gerade sein.
+  * @return Gibt eine Zeichenkette zurueck mit der Anfangszahl und der Teilersumme
   */
 
   public static String teilersumme(int zahl) {
@@ -31,10 +30,11 @@ public class MeineMathKlasse
   }
 
   /**
-  * Die Methode isbnPrüfziffer errechnet dank der 9 ersten Zahlen eine Prüfziffer.
-  * Wenn die Prüfziffer gleich 10 ist, wird "X" ausgegeben.
-  * Das Schlüsselwort static dient dazu die Methode außerhalb der Klasse MeineMathKlasse aufzurufen.
+  * Die Methode isbnPruefziffer errechnet dank der 9 ersten Zahlen eine Pruefziffer.
+  * Wenn die Pruefziffer gleich 10 ist, wird "X" ausgegeben.
+  * Das Schluesselwort static dient dazu die Methode ausserhalb der Klasse MeineMathKlasse aufzurufen.
   * @param isbn Benutzer definierte Variable, die die 9 ersten Zahlen eines ISBN Codes darstellen.
+  * @return Gibt eie Zeichenkette zurueck, "X" wenn summe % 11 == 10, sonst die Pruefziffer.
   */
 
   public static String isbnPruefziffer (long isbn) {
@@ -55,11 +55,12 @@ public class MeineMathKlasse
   }
 
   /**
-  * Die Methode quadratischeGleichung löst eine Gleichung des zweiten Grades.
-  * Es gibt drei verschiedene Fälle, die vom Vorzeichen der Diskriminante abhänging sind.
-  * Das Schlüsselwort static dient dazu die Methode außerhalb der Klasse MeineMathKlasse aufzurufen.
-  * @param p stellt bei einer gLichung der Form: x² + px + q = 0, 'p' dar.
-  * @param q stellt bei einer gLichung der Form: x² + px + q = 0, 'q' dar.
+  * Die Methode quadratischeGleichung loest eine Gleichung des zweiten Grades.
+  * Es gibt drei verschiedene Faelle, die vom Vorzeichen der Diskriminante abhaenging sind.
+  * Das Schluesselwort static dient dazu die Methode ausserhalb der Klasse MeineMathKlasse aufzurufen.
+  * @param p stellt bei einer Gleichung der Form: x^2 + px + q = 0, 'p' dar.
+  * @param q stellt bei einer Gleichung der Form: x^2 + px + q = 0, 'q' dar.
+  * @return die Methode gibt eine Zeichenkette zurueck, inder sich das Ergebnis befindet
   */
 
   public static String quadratischeGleichung (double p, double q) {
@@ -85,9 +86,9 @@ public class MeineMathKlasse
   }
 
   /**
-  * Iteriert Ã¼ber a, b und c um die Gleichung a³ + b³ = c² zu lösen.
+  * Iteriert ueber a, b und c um die Gleichung a^3 + b^3 = c^3 zu loesen.
   * @param limit Iterations Grenze.
-  * @return Gibt die Zahlentriplets, die die Gleichung lösen, als Zeichenkette zurück.
+  * @return Gibt die Zahlentriplets, die die Gleichung loesen, als Zeichenkette zurueck.
   */
   public static String a3b3c2(int limit) {
     int limit2 = limit * limit;
@@ -126,7 +127,7 @@ public class MeineMathKlasse
   }
 
   /**
-  * Prüft ob die Bedingung erfüllt wurde, wirft andersfalls eine Exception aus.
+  * Prueft ob die Bedingung erfuellt wurde, wirft andersfalls eine Exception aus.
   */
   public static void check(boolean bedingung, String msg)
   {
