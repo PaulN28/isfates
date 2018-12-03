@@ -241,7 +241,7 @@ public class LagerDialog
     return input.nextDouble();
   }
   /**
-  * Main-Methode zum Erzeugen des BankDialog-Objektes und zum starten der Testschleife
+  * Main-Methode zum Erzeugen des LagerDialog-Objektes und zum starten der Testschleife
   */
   public static void main (String[] args) {
     try {
