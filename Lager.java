@@ -16,7 +16,7 @@ public class Lager {
 
 
   /**
-   * Konstruktor fuer Objekte der Klasse Bank
+   * Konstruktor fuer Objekte der Klasse Lager
    *
    * @param name Name des Lagers
    * @param maxAnzartikelen  maximale Anzahl an anzulegenden Artikeln
