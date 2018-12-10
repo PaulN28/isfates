@@ -13,8 +13,9 @@ public class Ueb06
     * sowie den Messwert, der am nächsten daran liegt und den der am weitesten davon entfernt ist.
     *
     * @param  double[] Ein Feld mit double Messwerten
+    * @return double[] Ein Feld mit min, mittel und max
     */
-    public static void messwerte (double[] tab) {
+    public static double[] messwerte (double[] tab) {
       double mittel, min, max;
       mittel = 0.0;
       for (int i = 0; i < tab.length; i++) {
@@ -30,7 +31,12 @@ public class Ueb06
           max = tab[i];
         }
       }
-      System.out.print("\n Mittel: " + mittel + " Min: " + min + " Max: "+ max);
+      return new double[] { min, mittel, max };
+    }
+
+    public static void printMesswerte(double[] tab) {
+      System.out.println("\ndie Ergebnisswerte : min, mittel, max : \n\t" +
+                               java.util.Arrays.toString( messwerte(tab) ));
     }
 
     /**
@@ -55,8 +61,9 @@ public class Ueb06
     * InsertionSort Algorithmus. Sortiert die Zahlen eines uebergebenen Arrays. (klein bis groß)
     *
     * @param  int[] array ist eine unsortierte/sortierte Liste von Zahlen
+    * @return insertionSort Sorted Array
     */
-    public static void insertionSort(int[] array)
+    public static int [] insertionSort(int[] array)
     {
         int aktuelleZahl;
         int j;
@@ -72,10 +79,14 @@ public class Ueb06
             }
             array[j+1] = aktuelleZahl;
         }
-
-        System.out.println(  "\n Das sortierte intArray : \n\t" +
-                                  java.util.Arrays.toString(array));
+        return array;
     }
+
+    public static void printInsertionSort(int[] array) {
+      System.out.println(  "\n Das sortierte intArray : \n\t" +
+                                java.util.Arrays.toString(insertionSort( array )));
+  }
+
 
     /**
     * Main Methode fuer die Klasse Ueb06
@@ -86,11 +97,11 @@ public class Ueb06
       String stringZaehler_tab[] = {"p1", "mml", "p    m", "%pa,", "v"};
       int insertionSort_tab[]  = {2, 8, 5, 7, 1, 3, 15, -9};
 
-      messwerte(messwerte_tab);
+      printMesswerte(messwerte_tab);
 
       System.out.println("\n\n " + stringZaehler(stringZaehler_tab));
 
-      insertionSort(insertionSort_tab);
+      printInsertionSort(insertionSort_tab);
 
      }
 }
