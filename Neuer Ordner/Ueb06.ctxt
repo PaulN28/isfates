@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Ueb06
+comment0.text=\r\n\ Eine\ Klasse,\ die\ die\ Methoden\ der\ Uebung\ 6\ beinhaltet\r\n\r\n\ @author\ Paul\ NICOLAS\ und\ Nils\ GAMLIN\r\n\ @version\ 07/12/18\r\n
+comment1.params=tab
+comment1.target=double[]\ messwerte(double[])
+comment1.text=\r\n\ Methode,\ die\ zu\ einem\ \u00FCbergebenen\ Feld\ mit\ double-Messwerten\ das\ arithmetische\ Mittel\ dieser\ Werte\ bestimmt,\r\n\ sowie\ den\ Messwert,\ der\ am\ n\u00E4chsten\ daran\ liegt\ und\ den\ der\ am\ weitesten\ davon\ entfernt\ ist.\r\n\r\n\ @param\ \ double[]\ Ein\ Feld\ mit\ double\ Messwerten\r\n\ @return\ double[]\ Ein\ Feld\ mit\ min,\ mittel\ und\ max\r\n
+comment2.params=tab
+comment2.target=void\ printMesswerte(double[])
+comment3.params=stab
+comment3.target=int\ stringZaehler(java.lang.String[])
+comment3.text=\r\n\ Methode\ die\ zu\ einem\ \u00FCbergebenen\ String-Array\ bestimmt,\ wieviele\ Strings\ darin\ enthalten\ sind,\ die\ ausschlie\u00DFlich\ aus\ Klein-\ oder\ Gro\u00DFbuchstaben\ bestehen.\r\n\r\n\ @param\ String[]\ Array\ von\ Strings\r\n\ @return\ anzahl\ an\ Strings\ in\ der\ Tabelle,\ die\ ausschlie\u00DFlich\ aus\ Klein\ -\ oder\ Gro\u00DFbuchstaben\ bestehen.\r\n
+comment4.params=array
+comment4.target=int[]\ insertionSort(int[])
+comment4.text=\r\n\ InsertionSort\ Algorithmus.\ Sortiert\ die\ Zahlen\ eines\ uebergebenen\ Arrays.\ (klein\ bis\ gro\u00DF)\r\n\r\n\ @param\ \ int[]\ array\ ist\ eine\ unsortierte/sortierte\ Liste\ von\ Zahlen\r\n\ @return\ insertionSort\ Sorted\ Array\r\n
+comment5.params=array
+comment5.target=void\ printInsertionSort(int[])
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+comment6.text=\r\n\ Main\ Methode\ fuer\ die\ Klasse\ Ueb06\r\n\ Es\ ist\ moeglich\ in\ den\ Feldern\ beliebig\ zu\ aendern\r\n
+numComments=7
