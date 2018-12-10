@@ -1,5 +1,3 @@
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 /**
 * Eine Klasse, die die Methoden der Uebung 6 beinhaltet
 *
