@@ -12,7 +12,7 @@ public class Ueb06
     * sowie den Messwert, der am nächsten daran liegt und den der am weitesten davon entfernt ist.
     *
     * @param  double[] Ein Feld mit double Messwerten
-    * @return double[] Ein Feld mit min, mittel und max
+    * @return double[] Gibt ein Feld mit min, mittel und max
     */
     public static double[] messwerte (double[] tab) {
       double mittel, min, max;
@@ -65,7 +65,7 @@ public class Ueb06
     * InsertionSort Algorithmus. Sortiert die Zahlen eines uebergebenen Arrays. (klein bis groß)
     *
     * @param  int[] array ist eine unsortierte/sortierte Liste von Zahlen
-    * @return insertionSort Sorted Array
+    * @return insertionSort Gibt das als Parameter eingegebe Array, sortiert zurueck
     */
     public static int[] insertionSort(int[] array)
     {
