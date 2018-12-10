@@ -34,7 +34,12 @@ public class Ueb06
       }
       return new double[] {min, mittel, max };
     }
-
+    
+    /*
+    * Zeigt die Messwerte an
+    * @param double[] Ein Feld mit double Messwerten
+    */
+    
     public static void printMesswerte(double[] tab) {
       System.out.println("\ndie Ergebnisswerte : min, mittel, max : \n\t" +
                                java.util.Arrays.toString( messwerte(tab) ));
@@ -83,6 +88,11 @@ public class Ueb06
         return array;
     }
 
+    /*
+    * Zeigt das sortiert Feld an
+    * @param int[] Ein Feld mit int Messwerten
+    */
+    
     public static void printInsertionSort(int[] array) {
       System.out.println(  "\n Das sortierte intArray : \n\t" +
                                 java.util.Arrays.toString(insertionSort( array )));
