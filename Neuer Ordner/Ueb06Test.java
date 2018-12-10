@@ -118,4 +118,3 @@ public class Ueb06Test
         assertArrayEquals(new int[]{-100, 7, 10, 20, 560}, Ueb06.insertionSort(new int[]{20, 10, -100, 7, 560}));
     }
 }
-

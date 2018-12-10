@@ -12,7 +12,7 @@ public class Ueb06
     * sowie den Messwert, der am nächsten daran liegt und den der am weitesten davon entfernt ist.
     *
     * @param  double[] Ein Feld mit double Messwerten
-    * @return double[] Gibt ein Feld mit min, mittel und max
+    * @return double[] Ein Feld mit min, mittel und max
     */
     public static double[] messwerte (double[] tab) {
       double mittel, min, max;
@@ -33,9 +33,9 @@ public class Ueb06
       return new double[] {min, mittel, max };
     }
     
-    /*
+    /**
     * Zeigt die Messwerte an
-    * @param double[] Ein Feld mit double Messwerten
+    * @param double[] Gibt ein Feld mit double Messwerten
     */
     
     public static void printMesswerte(double[] tab) {
@@ -58,14 +58,24 @@ public class Ueb06
               summe++;
              }
           }
-          return summe;
-      }
+      return summe;
+     }
+     
+    /**
+    * Zeigt die Summe an
+    * @param String[] stab Gibt ein Feld mit Strings 
+    */
+    
+    public static void printStringZaehler(String[] stab) {
+      System.out.println(("\nDie Summe ist : ") +
+                               stringZaehler(stab) );
+    }
 
     /**
     * InsertionSort Algorithmus. Sortiert die Zahlen eines uebergebenen Arrays. (klein bis groß)
     *
     * @param  int[] array ist eine unsortierte/sortierte Liste von Zahlen
-    * @return insertionSort Gibt das als Parameter eingegebe Array, sortiert zurueck
+    * @return insertionSort Gibt das als Parameter eingegebene Array, sortiert zurueck
     */
     public static int[] insertionSort(int[] array)
     {
@@ -86,9 +96,9 @@ public class Ueb06
         return array;
     }
 
-    /*
+    /**
     * Zeigt das sortiert Feld an
-    * @param int[] Ein Feld mit int Messwerten
+    * @param int[] Gibt ein Feld mit int Messwerten
     */
     
     public static void printInsertionSort(int[] array) {
@@ -107,7 +117,7 @@ public class Ueb06
 
       printMesswerte(messwerte_tab);
 
-      System.out.println("\n\n " + stringZaehler(stringZaehler_tab));
+      printStringZaehler(stringZaehler_tab);
 
       printInsertionSort(insertionSort_tab);
 
