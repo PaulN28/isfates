@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=LinkFilter
+comment0.text=\r\n\ Klasse\ der\ Link\ Filter\ Methode\r\n\ Zeigt\ die\ URLs\ verschiedener\ Webseiten,\ die\ sich\ in\ verschiedenen\ HTML\ Dateien\ befinden,\ an\r\n\r\n\ @author\ NICOLAS\ Paul\ &\ GAMLIN\ Nils\r\n\ @version\ 14/12/18\r\n
+comment1.params=dateiName
+comment1.target=void\ start(java.lang.String)
+comment1.text=\r\n\ Die\ start\ Methode\ filtert\ die\ URLs\ die\ sich\ in\ einer\ gegebenen\ Datei\ befinden\r\n\ @param\ dateiName\ der\ Name\ der\ Datei\r\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+numComments=3
