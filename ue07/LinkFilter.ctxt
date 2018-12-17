@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=LinkFilter
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ LinkFilter\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=LinkFilter()
+comment2.params=dateiName
+comment2.target=void\ start(java.lang.String)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4
