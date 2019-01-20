@@ -37,7 +37,7 @@ public class LagerDialog
     input = new Scanner(System.in); // initalise les valeurs de départ
     existiert_lager = false;
   }
-    
+
 
   public void start() {
     int funktion = -1;
@@ -54,7 +54,7 @@ public class LagerDialog
        }  catch (NullPointerException e) {
          System.out.println(e);
     input.next();
-     } 
+     }
       catch (Exception e) {
         System.out.println("Ausnahme gefangen: " + e);
         e.printStackTrace(System.out);
@@ -67,7 +67,7 @@ public class LagerDialog
   * Dient dazu ein Menue im Terminal anzuzeigen
   */
 
-      
+
   private int einlesenFunktion() {
     int funktion;
     System.out.print(NEUES_STANDARD_LAGER     + ": Neues Standardlager; " +
@@ -85,7 +85,7 @@ public class LagerDialog
     return funktion;
 
   }
-      
+
   /**
   * Dient dazu die Methode auszufuehren sie vom Benutzer gewaehlt wurde
   */
@@ -101,7 +101,7 @@ public class LagerDialog
 
     switch (funktion) {
 
-      // Variablen gleich "false", aendert sich zu "true" wenn Konstruktor ausgefuehrt wird 
+      // Variablen gleich "false", aendert sich zu "true" wenn Konstruktor ausgefuehrt wird
 
       case NEUES_STANDARD_LAGER :
       if (!existiert_lager) {

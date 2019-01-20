@@ -1,4 +1,3 @@
-
 /**
  * Eine Klasse Lager die es ermoeglicht verschiedene zu bearbeiten
  *
@@ -46,7 +45,7 @@ public class Lager {
    */
   public void legeArtikelAn(int artikelnummer, String artikelbezeichnung, int artikelbestand, double artikelpreis) {
       check(findeArtikel(artikelnummer) < 0, "Artikel bereits vorhanden!");
-      check(anzArtikel < getMaxAnzArtikel(), "Das Lager ist schon voll");  
+      check(anzArtikel < getMaxAnzArtikel(), "Das Lager ist schon voll");
       artikelTab[anzArtikel] = new Artikel(artikelnummer, artikelbezeichnung, artikelbestand, artikelpreis);
       anzArtikel++;
   }
