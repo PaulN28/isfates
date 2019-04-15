@@ -1,5 +1,9 @@
 
 package src.ub14;
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
 /**
  * Ein Mitarbeiter hat ein Name und ein Vorname den er von der Klasse Person erbt. Ausserdem hat ein Mitarbeiter eine Email Adresse.
  * Die Methoden in dieser Klasse dienen dazu die Attribute aufzurufen.
@@ -12,6 +16,8 @@ public class Mitarbeiter extends Person{
     //----------------Attribute----------------
 
     private String email;
+    public static final Pattern VALID_EMAIL_ADDRESS_REGEX = 
+        Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     //----------------Konstruktor----------------
 
@@ -29,14 +35,25 @@ public class Mitarbeiter extends Person{
     }
 
     public void setEmail(String email) {
-        check( email != null,
-            "email darf nicht leer sein");
+        check( validate(email) == true, "email ist nicht richtig");
         this.email = email;
     }
 
     public String getEmail() {
         return email;
     }
+    
+    
+    /**
+     * Check ob die Email Adresse korrest ist
+     * 
+     * @param email (String) zu testen.
+     */
+    
+    public static boolean validate(String email) {
+        Matcher matcher = VALID_EMAIL_ADDRESS_REGEX .matcher(email);
+        return matcher.find();
+}
 
     /**
      * Reservierung eines Raumes.
