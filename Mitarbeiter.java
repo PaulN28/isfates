@@ -1,6 +1,3 @@
-
-package src.ub14;
-
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -45,7 +42,7 @@ public class Mitarbeiter extends Person{
     
     
     /**
-     * Checkt ob die Email Adresse korrekt ist.
+     * Checkt ob die Email Adresse korrekt ist
      * 
      * @param email (String) zu testen.
      */

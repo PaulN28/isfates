@@ -5,7 +5,6 @@
  * @date 13/04/2019
  */
 
-package src.ub14;
 
 public class Reservierung {
 
