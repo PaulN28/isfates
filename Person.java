@@ -1,21 +1,54 @@
+package src.ub14;
+
 public class Person {
 
-    private static String vorname;
-    private static String name;
-    public Person(String vorname, String name){
-        this.setVorname(vorname);
-        this.setName(name);
+// Attribute    
+    
+    private String vorname;
+    private String name;
+
+// Konstruktor
+    
+    public Person (String vorname, String name) {       
+        setVorname(vorname);
+        setName(name);
+        
     }
-    public static String getVorname() {
-        return vorname;
-    }
-    public void setVorname(String vorname) {
+    
+//Vorname   
+    
+    public void setVorname(String vorname) {    
+        check( vorname != null, 
+        "Vorname darf nicht leer sein");
         this.vorname = vorname;
     }
-    public static String getName() {
-        return name;
+    
+    public String getVorname() {
+        return vorname;
     }
-    public void setName(String name) {
+    
+//Name
+    
+    public void setName(String name) {  
+        check( name != null, 
+        "Name darf nicht leer sein");
         this.name = name;
     }
+        
+    public String getName() {
+        return name;
+    }   
+//
+    
+    public String toString() {
+        return String.format("%s %s",
+        vorname, name);
+     }
+    
+    public static void check(boolean bedingung, String msg) {
+        if (!bedingung)
+        throw new IllegalArgumentException(msg);
+      }
+    
+    
 }

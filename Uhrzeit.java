@@ -1,37 +1,52 @@
+package src.ub14;
+
 public class Uhrzeit {
-    private static int stunden;
-    private static int minuten;
-
-    public static int getStunden() {
-        return stunden;
+    
+    //Attribute
+    
+    private int stunde;
+    private int minute;
+    
+    //Konstruktor
+    
+    public Uhrzeit(int stunde, int minute) {
+        setStunde(stunde);
+        setMinute(minute);
     }
-
-    public static void setStunden(int stunden) {
-        Uhrzeit.stunden = stunden;
+    
+    //Stunde
+    
+    public void setStunde(int stunde) { 
+        check( stunde >= 0 && stunde <= 24, 
+        "Stunde darf zwischen 8 und 20 sein");
+        this.stunde = stunde;
     }
-
-    public static int getMinuten() {
-        return minuten;
+        
+    public int getStunde() {
+        return stunde;
     }
-
-    public static void setMinuten(int minuten) {
-        Uhrzeit.minuten = minuten;
+    
+    //Minute
+    
+    public void setMinute(int minute) { 
+        check( minute >= 0 && minute < 60, 
+        "Gebaude darf groesser als 0 sein");
+        this.minute = minute;
     }
-
-    public Uhrzeit(int stunden, int minuten) {
-        check(stunden >= 0 && stunden <= 24, "Hours cannot be negative nor can they be superior to 24");
-        check(minuten >= 0 && minuten <= 60, "minutes cannot be negative nor can they be superior to 60");
-        this.stunden = stunden;
-        this.minuten = minuten;
+        
+    public int getMinute() {
+        return minute;
     }
-
+    
     public String toString() {
-        return String.format("%d:%d Uhr", stunden, minuten);
-    }
-
-    public void check(boolean condition, String message) {
-        if (condition != true){
-            System.out.println(message);
+        return String.format("%d:%d Uhr",
+        stunde, minute);
+     }
+    
+    public static void check(boolean bedingung, String msg) {
+        if (!bedingung) {
+        throw new IllegalArgumentException(msg);
         }
-    }
+      }
+
 }
