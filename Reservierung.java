@@ -1,8 +1,15 @@
+/**
+* Eine Reservierung hat einen Terminbeginn, einen Terminende.
+*
+* @author Paul Nicolas und Nils Gamlin
+* @date 13/04/2019
+*/
+
 package src.ub14;
 
 public class Reservierung {
 
-// Attribute
+//----------------Attribute---------------- 
 
     private String bemerkung;
     private Uhrzeit beginn;
@@ -11,14 +18,21 @@ public class Reservierung {
     private Mitarbeiter mitarbeiter;
 
 
-// Konstruktor
+//----------------Konstruktor---------------- 
+
+/**
+* Konstrukor der Klasse Reservierung.
+*
+* @param beginn (Uhrzeit) der Terminbeginn der Reservierung.
+* @param ende (Uhrzeit) das Terminende der Reservierung.
+*/  
 
     public Reservierung (Uhrzeit beginn, Uhrzeit ende) {
         setBeginn(beginn);
         setEnde(ende);
     }
 
-//beginn
+//----------------Beginn---------------- 
 
     public void setBeginn(Uhrzeit beginn) {
         this.beginn = beginn;
@@ -27,7 +41,7 @@ public class Reservierung {
         return beginn;
     }
 
-    //ende
+//----------------Ende---------------- 
 
     public void setEnde(Uhrzeit ende) {
         this.ende = ende;
@@ -37,7 +51,7 @@ public class Reservierung {
         return ende;
     }
 
-    //bemerkung
+//----------------Bemerkung---------------- 
 
     public void setBemerkung(String bemerkung) {
         this.bemerkung = bemerkung;
@@ -48,19 +62,23 @@ public class Reservierung {
     }
 
 
-    //raum
+//----------------Raum---------------- 
 
     public void setRaum(Raum raum) {
         this.raum = raum;
     }
 
-        //mitarbeiter
+//----------------Mitarbeiter---------------- 
 
     public void setMitarbeiter(Mitarbeiter mitarbeiter) {
         this.mitarbeiter = mitarbeiter;
     }
 
-
+/**
+* Gibt die Informationen zur Reservierung als String zurueck.
+*
+* @return String 
+*/	
 
     public String toString() {
         StringBuilder sb = new StringBuilder();

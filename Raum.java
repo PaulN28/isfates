@@ -1,3 +1,10 @@
+/**
+* Ein Raum befindet sich in einem Gebaeude, auf einer Etage, und besitzt eine Raumnummer.
+*
+* @author Paul Nicolas und Nils Gamlin
+* @date 13/04/2019
+*/
+
 package src.ub14;
 
 import java.io.*;
@@ -5,7 +12,7 @@ import java.util.*;
 
 public class Raum {
 
-    // Attribute
+//----------------Attribute----------------   
 
     private Reservierung [] reservierungen;
     private int anzReservierungen;
@@ -15,7 +22,15 @@ public class Raum {
     private int raum;
 
 
-    //Konstruktor
+//----------------Kontruktor----------------   
+
+/**
+* Konstrukor der Klasse Raum.
+*
+* @param geb (int) die Gebaeudenummer.
+* @param etage (int) die Etage.
+* @param raum (int) die Raumnummer.
+*/  
 
     public Raum(int geb, int etage, int raum) {
         setGeb(geb);
@@ -24,6 +39,12 @@ public class Raum {
         reservierungen = new Reservierung[24];
         anzReservierungen = 0;
     }
+	
+/**
+* Ermoeglicht es die Reservierungen eines Raumes zum speicher (Array) hinzuzufuegen.
+*
+* @param reservierung (Reservierung) die Reservierung eines Raumes.
+*/	
 
         public void addReservierung(Reservierung reservierung){
         reservierungen[anzReservierungen] = reservierung;
@@ -31,7 +52,7 @@ public class Raum {
 
        }
 
-    //geb
+//----------------Gebaeude----------------   
 
         public void setGeb(int geb) {
             check( geb > 0,
@@ -43,7 +64,7 @@ public class Raum {
             return geb;
         }
 
-        //etage
+//----------------Etage----------------   
 
         public void setEtage(int etage) {
             check( etage >= 0,
@@ -55,7 +76,7 @@ public class Raum {
             return etage;
         }
 
-        //raum
+//----------------Raum----------------   
 
         public void setRaum(int raum) {
             check( raum > 0 ,
@@ -66,6 +87,12 @@ public class Raum {
         public int getRaum() {
             return raum;
         }
+		
+/**
+* Gibt die Informationen zur Reservierung eines Raumes, als String zurueck.
+*
+* @return String 
+*/			
 
         public String toString() {
             StringBuilder sb = new StringBuilder();
@@ -78,6 +105,8 @@ public class Raum {
             return sb.toString();
 
          }
+		 
+		 
 
         public static void check(boolean bedingung, String msg) {
             if (!bedingung)
