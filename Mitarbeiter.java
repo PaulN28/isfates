@@ -45,7 +45,7 @@ public class Mitarbeiter extends Person{
     
     
     /**
-     * Check ob die Email Adresse korrest ist
+     * Checkt ob die Email Adresse korrekt ist.
      * 
      * @param email (String) zu testen.
      */
