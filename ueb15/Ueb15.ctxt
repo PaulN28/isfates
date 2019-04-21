@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Ueb15
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyMathClass\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=a\ b
+comment1.target=int\ ggT(int,\ int)
+comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.params=string
+comment2.target=boolean\ isPalindromeRecursive(java.lang.String)
+comment3.params=string
+comment3.target=boolean\ isPalindromeIterative(java.lang.String)
+numComments=4

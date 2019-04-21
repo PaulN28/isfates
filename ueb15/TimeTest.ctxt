@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=TimeTest
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ TimeTest\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=fileName
+comment1.target=java.io.PrintWriter\ createFile(java.lang.String)
+comment2.params=object\ content
+comment2.target=void\ writeFile(java.io.PrintWriter,\ java.lang.String)
+comment3.params=object
+comment3.target=void\ saveFile(java.io.PrintWriter)
+comment4.params=teststring
+comment4.target=double\ runIterativeFunction(java.lang.String)
+comment5.params=teststring
+comment5.target=double\ runRecursiveFunction(java.lang.String)
+comment6.params=
+comment6.target=void\ main()
+numComments=7
