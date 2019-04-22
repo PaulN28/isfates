@@ -10,6 +10,9 @@ import java.io.*;
 public class PalindromeIterative
 {
  
+  private File datei;
+  private BufferedReader reader;
+ 
  /**
  * Bestimmt ob ein Wort, ein Palindrome ist. Benutzt eine Iterative Implementierung.
  *
@@ -45,7 +48,11 @@ public class PalindromeIterative
   {
 
     File datei = new File(dateiName);
-    BufferedReader reader = new BufferedReader (new FileReader(datei));
+
+    if (!datei.exists() || !datei.canRead())
+    throw new IOException("Datei nicht lesbar");
+
+    reader = new BufferedReader (new FileReader(datei));
     String aktuelleZeile;
 
     while ((aktuelleZeile = reader.readLine()) != null){
@@ -54,20 +61,20 @@ public class PalindromeIterative
     }
     reader.close();
   }
- 
+
   public static void main(String[] args) {
-      for (int i = 0; i < args.length; i++)
+    for (int i = 0; i < args.length; i++)
     {
       String dateiName = new String(args[i]);
-      System.out.println ( "\n\t Datei : " + dateiName);
-        try {
-            if (args.length > 0) {
-                PalindromeIterative palindromeiterative = new PalindromeIterative();
-                palindromeiterative.start(dateiName);
-            }
-        } catch (IOException e) {
-            System.out.println(e);
+      System.out.println ( "\nDatei : " + dateiName);
+      try {
+        if (args.length > 0) {
+          PalindromeIterative palindromeiterative = new PalindromeIterative();
+          palindromeiterative.start(dateiName);
         }
+      } catch (IOException e) {
+        System.out.println(e);
+      }
     }
-}
+  }
 }
