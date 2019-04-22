@@ -1,19 +1,21 @@
-
 /**
- * Write a description of class EuklideggT here.
+ * Klasse der Methode ggT. 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Paul Nicolas, Nils Gamlin
+ * @version 20.04.2019
  */
 public class EuklideggT
 {
-    // instance variables - replace the example below with your own
+    
+    
     /**
-     * An example of a method - replace this comment with your own
+     * Methode die es ermoeglicht den groeßten gemeinsamen Teiler von zwei long Zahlen zu berechnen.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param a long Zahl. 
+     * @param b long Zahl.
+     * @return a long Zahl falls b = 0, sonst wird a weiter reduziert.
      */
+    
     public static long ggT(long a, long b)
     {
         if(b == 0){
