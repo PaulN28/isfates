@@ -10,6 +10,9 @@ import java.io.*;
 public class PalindromeRecursive
 {
     
+  private File datei;
+  private BufferedReader reader;
+    
  /**
  * Bestimmt ob ein Wort, ein Palindrome ist. Benutzt eine Recursive Implementierung.
  *
@@ -40,34 +43,37 @@ public class PalindromeRecursive
  * @param String Dateiname.
  */
 
-    public void start (String dateiName)
-    throws IOException
+  public void start (String dateiName)
+  throws IOException
+  {
+    datei = new File(dateiName);
+
+    if (!datei.exists() || !datei.canRead())
+      throw new IOException("Datei nicht lesbar");
+
+    reader = new BufferedReader (new FileReader(datei));
+    String aktuelleZeile;
+
+    while ((aktuelleZeile = reader.readLine()) != null){
+
+      System.out.println(isPalindromeRecursive(aktuelleZeile));
+    }
+    reader.close();
+  }
+
+  public static void main(String[] args) {
+      for (int i = 0; i < args.length; i++)
     {
-
-        File datei = new File(dateiName);
-        BufferedReader reader = new BufferedReader (new FileReader(datei));
-        String aktuelleZeile;
-
-        while ((aktuelleZeile = reader.readLine()) != null){
-
-            System.out.println(isPalindromeRecursive(aktuelleZeile));
-        }
-        reader.close();
-    }
-
-    public static void main(String[] args) {
-        for (int i = 0; i < args.length; i++)
-        {
-            String dateiName = new String(args[i]);
-            System.out.println ( "\n\t Datei : " + dateiName);
-            try {
-                if (args.length > 0) {
-                    PalindromeRecursive palindromerecursive = new PalindromeRecursive();
-                    palindromerecursive.start(dateiName);
-                }
-            } catch (IOException e) {
-                System.out.println(e);
+      String dateiName = new String(args[i]);
+      System.out.println ( "\nDatei : " + dateiName);
+        try {
+            if (args.length > 0) {
+                PalindromeRecursive palindromerecursive = new PalindromeRecursive();
+                palindromerecursive.start(dateiName);
             }
+        } catch (IOException e) {
+            System.out.println(e);
         }
     }
+  }
 }
