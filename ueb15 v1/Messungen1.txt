@@ -1,0 +1,17 @@
+Teststring   |   Zeit Iterative Lösung   |   Zeit Recursive Lösung   |   Zeitunterschied
+SWSe   |   0.0049218460000000006(false)   |   0.002968615   |   5.3330000000000004E-6   |   
+QWWQ   |   6.975E-6(true)   |   4.103E-6(true)   |   4.102000000000001E-6   |   
+xanax   |   5.334E-6(true)   |   2.872E-6(true)   |   1.6410000000000005E-6   |   
+WESEW   |   2.872E-6(true)   |   2.4610000000000002E-6(true)   |   2.0510000000000004E-6   |   
+handnah   |   1.641E-6(true)   |   2.4620000000000003E-6(true)   |   2.462E-6   |   
+HiHiiHiH   |   1.641E-6(true)   |   2.872E-6(true)   |   2.052E-6   |   
+HoHoHoHoH   |   2.872E-6(true)   |   8.205E-6(true)   |   2.052E-6   |   
+lagerregal   |   1.2717E-5(true)   |   4.513000000000001E-6(true)   |   1.0256000000000001E-5   |   
+detartrated   |   4.103E-6(true)   |   4.102E-6(true)   |   1.6410000000000005E-6   |   
+seegardedragees   |   4.103E-6(true)   |   4.102E-6(true)   |   2.0510000000000004E-6   |   
+dienstmannamtsneid   |   5.3330000000000004E-6(true)   |   5.744E-6(true)   |   7.385E-6   |   
+SAIPPUAKIVIKAUPPIAS   |   5.3330000000000004E-6(true)   |   8.205E-6(true)   |   8.205E-6   |   
+SASASASASASASASASASASAS   |   4.102E-6(true)   |   5.3330000000000004E-6(true)   |   2.052E-6   |   
+SASASASASASASASASASASASASASASASASASASASASASAS   |   6.564E-6(true)   |   6.9740000000000005E-6(true)   |   2.0510000000000004E-6   |   
+SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS   |   1.6821E-5(true)   |   9.846E-6(true)   |   2.4610000000000007E-6   |   
+SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS   |   1.6000000000000003E-5((true))   |   1.8461E-5(true)   |   2.4619999999999995E-6   |   

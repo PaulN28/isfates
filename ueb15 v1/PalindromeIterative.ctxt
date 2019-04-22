@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=PalindromeIterative
+comment1.params=test
+comment1.target=boolean\ isPalindromeIterative(java.lang.String)
+comment2.params=dateiName
+comment2.target=void\ start(java.lang.String)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4
