@@ -1,14 +1,22 @@
  /**
- * Décrivez votre classe PalindromeIterative ici.
+ * Klasse die die Iterative Loesung der isPalindrome Methode.
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Paul Nicolas, Nils Gamlin
+ * @version 20.04.2019
  */
 
 import java.io.*;
 
 public class PalindromeIterative
 {
+ 
+ /**
+ * Bestimmt ob ein Wort, ein Palindrome ist. Benutzt eine Iterative Implementierung.
+ *
+ * @param String Wort das getestet wird.
+ * @return boolean Gibt zurück ob ein Wort ein Palindrome ist (true) oder nicht (false).
+ */
+ 
   public static boolean isPalindromeIterative (String test) {
 
     int testLength = test.length();
@@ -26,6 +34,11 @@ public class PalindromeIterative
   return true;
 }
 
+ /**
+ * Ermoeglicht es die Woerter einer Datei, Zeile per Zeile, auf ihre Palindromitaet zu ueberpruefen.
+ *
+ * @param String Dateiname.
+ */
 
   public void start (String dateiName)
   throws IOException
@@ -41,7 +54,7 @@ public class PalindromeIterative
     }
     reader.close();
   }
-
+ 
   public static void main(String[] args) {
       for (int i = 0; i < args.length; i++)
     {
