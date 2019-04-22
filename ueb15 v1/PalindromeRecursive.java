@@ -60,6 +60,11 @@ public class PalindromeRecursive
     }
     reader.close();
   }
+    
+ /**
+ * Die main Methode ruft die Startmethode so viele male auf, wie es Argumente gibt.
+ * @param String[] die verschiedenen Dateien.
+ */
 
   public static void main(String[] args) {
       for (int i = 0; i < args.length; i++)
