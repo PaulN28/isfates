@@ -2,25 +2,16 @@ import java.io.*;
 import java.lang.Math.*;
 
 /**
- * Klasse die Tests der der Palindrome Funktionen ausfuehrt.
+ * Write a description of class TimeTest here.
  *
- * @author Paul Nicolas, Nils Gamlin
- * @version 20.04.2019
+ * @author (your name)
+ * @version (a version number or a date)
  */
-
 public class TimeTest
 {
     
     private static boolean ergIterative;
     private static boolean ergRecursive;
-    
-    
- /**
- * Ermoeglicht es eine Datei herzustellen.
- *
- * @param String Dateiname mit korrekter Endung.
- * @return PrintWriter Objekt der auf die neue Datei verweist. 
- */
 
     public static PrintWriter createFile(String fileName){
 
@@ -36,36 +27,14 @@ public class TimeTest
             return newFile;
         }
     }
-    
- /**
- * Ermoeglicht es in einer Datei zu schreiben.
- *
- * @param PrintWriter Objekt der auf die Datei verweist, in welcher geschrieben muss.
- * @param String Inhalt.
- *
- */
 
     public static void writeFile(PrintWriter object, String content){
         object.println(content);
     }
-    
- /**
- * Ermoeglicht es die geschriebenen aenderungen zu speichern.
- *
- * @param PrintWriter Objekt der auf die Datei verweist, die gespeichert werden muss.
- */
-    
+
     public static void saveFile(PrintWriter object){
         object.close();
     }
-    
- /**
- * Testet die Iterative Loesung und misst die Zeit.
- *
- * @param String Testwort.
- * 
- * @return double Laufzeit der Iterativen Loesung.
- */
 
     public static double runIterativeFunction(String teststring){
         long startTime = System.nanoTime();
@@ -75,15 +44,6 @@ public class TimeTest
 
         return actualTimeInSeconds;
     }
-    
-    
- /**
- * Testet die Recursive Loesung und misst die Zeit.
- *
- * @param String Testwort.
- * 
- * @return double Laufzeit der Recursiven Loesung.
- */
 
     public static double runRecursiveFunction(String teststring){
 
@@ -96,7 +56,7 @@ public class TimeTest
     }
 
     public static void main(String[] args){
-        PrintWriter file = createFile("Messungen.txt");
+        PrintWriter file = createFile("Messungen2.txt");
         writeFile(  file, 
             "Teststring   |   Zeit Iterative Lösung   |   Zeit Recursive Lösung   |   Zeitunterschied");
 
@@ -133,7 +93,7 @@ public class TimeTest
                     Math.min(   runIterativeFunction("xanax"), 
                         runRecursiveFunction("xanax"))) + "   |   "));
 
-        //6 caracters
+        //5 caracters
         writeFile(file,
             ("WESEW" + "   |   " +
                 Double.toString(runIterativeFunction("WESEW")) + String.format("(%s)", Boolean.toString(ergIterative)) + "   |   " +
@@ -276,7 +236,34 @@ public class TimeTest
                     Math.min(   runIterativeFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS"), 
                         runRecursiveFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS"))) + "   |   "));
 
-                        
+        
+       
+       //200 caracters 
+        writeFile(file,
+            ("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS" + "   |   " +
+                Double.toString(runIterativeFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS")) + String.format("(%s)", String.format("(%s)", Boolean.toString(ergIterative))) + "   |   " +
+                Double.toString(runRecursiveFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS")) + String.format("(%s)", Boolean.toString(ergRecursive)) +"   |   " +
+                Double.toString(Math.max(   runIterativeFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS"),
+                        runRecursiveFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS")
+                    ) - 
+                    Math.min(   runIterativeFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS"), 
+                        runRecursiveFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS"))) + "   |   "));
+
+       
+       
+       //265 caracters 
+        writeFile(file,
+            ("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS" + "   |   " +
+                Double.toString(runIterativeFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS")) + String.format("(%s)", String.format("(%s)", Boolean.toString(ergIterative))) + "   |   " +
+                Double.toString(runRecursiveFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS")) + String.format("(%s)", Boolean.toString(ergRecursive)) +"   |   " +
+                Double.toString(Math.max(   runIterativeFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS"),
+                        runRecursiveFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS")
+                    ) - 
+                    Math.min(   runIterativeFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS"), 
+                        runRecursiveFunction("SASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS"))) + "   |   "));
+
+       
+       
         saveFile(file);
     }
 }
