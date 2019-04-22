@@ -1,14 +1,22 @@
 /**
- * Décrivez votre classe Recursive ici.
+ * Klasse die die Recursive Loesung der isPalindrome Methode.
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Paul Nicolas, Nils Gamlin
+ * @version 20.04.2019
  */
 
 import java.io.*;
 
 public class PalindromeRecursive
 {
+    
+ /**
+ * Bestimmt ob ein Wort, ein Palindrome ist. Benutzt eine Recursive Implementierung.
+ *
+ * @param String Wort das getestet wird.
+ * @return boolean Gibt zurück ob ein Wort ein Palindrome ist (true) oder nicht (false).
+ */
+    
     public static boolean isPalindromeRecursive (String test) {
 
         int testLength = test.length();
@@ -25,6 +33,12 @@ public class PalindromeRecursive
         }
         return true;
     }
+    
+ /**
+ * Ermoeglicht es die Woerter einer Datei, Zeile per Zeile, auf ihre Palindromitaet zu ueberpruefen.
+ *
+ * @param String Dateiname.
+ */
 
     public void start (String dateiName)
     throws IOException
