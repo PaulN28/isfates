@@ -2,16 +2,25 @@ import java.io.*;
 import java.lang.Math.*;
 
 /**
- * Write a description of class TimeTest here.
+ * Klasse die Tests der der Palindrome Funktionen ausfuehrt.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Paul Nicolas, Nils Gamlin
+ * @version 20.04.2019
  */
+
 public class TimeTest
 {
     
     private static boolean ergIterative;
     private static boolean ergRecursive;
+    
+    
+ /**
+ * Ermoeglicht es eine Datei herzustellen.
+ *
+ * @param String Dateiname mit korrekter Endung.
+ * @return PrintWriter Objekt der auf die neue Datei verweist. 
+ */
 
     public static PrintWriter createFile(String fileName){
 
@@ -27,14 +36,36 @@ public class TimeTest
             return newFile;
         }
     }
+    
+ /**
+ * Ermoeglicht es in einer Datei zu schreiben.
+ *
+ * @param PrintWriter Objekt der auf die Datei verweist, in welcher geschrieben muss.
+ * @param String Inhalt.
+ *
+ */
 
     public static void writeFile(PrintWriter object, String content){
         object.println(content);
     }
-
+    
+ /**
+ * Ermoeglicht es die geschriebenen aenderungen zu speichern.
+ *
+ * @param PrintWriter Objekt der auf die Datei verweist, die gespeichert werden muss.
+ */
+    
     public static void saveFile(PrintWriter object){
         object.close();
     }
+    
+ /**
+ * Testet die Iterative Loesung und misst die Zeit.
+ *
+ * @param String Testwort.
+ * 
+ * @return double Laufzeit der Iterativen Loesung.
+ */
 
     public static double runIterativeFunction(String teststring){
         long startTime = System.nanoTime();
@@ -44,6 +75,15 @@ public class TimeTest
 
         return actualTimeInSeconds;
     }
+    
+    
+ /**
+ * Testet die Recursive Loesung und misst die Zeit.
+ *
+ * @param String Testwort.
+ * 
+ * @return double Laufzeit der Recursiven Loesung.
+ */
 
     public static double runRecursiveFunction(String teststring){
 
@@ -56,7 +96,7 @@ public class TimeTest
     }
 
     public static void main(String[] args){
-        PrintWriter file = createFile("Messungen1.txt");
+        PrintWriter file = createFile("Messungen.txt");
         writeFile(  file, 
             "Teststring   |   Zeit Iterative Lösung   |   Zeit Recursive Lösung   |   Zeitunterschied");
 
