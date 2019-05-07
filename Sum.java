@@ -1,25 +1,24 @@
- 
-
 import java.util.Arrays;
 
 /**
- * Write a description of class Sum here.
+ * Die Klasse Sum ermöglicht es, ohne Anonyme Klasse, die Funktion sum zu implementieren.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Paul Nicolas u. Nils Gamlin
+ * @version 03.05.2019
  */
 public class Sum
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Sum
-     */
     public Sum()
     {
     }
 
+ /**
+ * Summiert die Elemente des Arrays paarweise von links nach rechts auf und speichert
+ * den neuen Wert in dem jeweils rechten Datenfeld. D.h.: a[1] = a[0] + a[1]; a[2] = a[1] + a[2] usw.
+ *
+ * @param float[] Array durch den iteriert wird. 
+ */
+ 
     public static void sum(float[] floatArray){
 
         int arrayGroesse = floatArray.length;
