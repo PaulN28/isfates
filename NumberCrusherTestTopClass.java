@@ -1,33 +1,26 @@
-
 /**
- * Write a description of class NumberCrusherTest here.
+ * Klasse die die, als Überklassen implementierten, Funktionen sum, substract, divide, swirl, divide testet.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Nils Gamlin
+ * @version 03.05.2019
  */
+
 public class NumberCrusherTestTopClass
 {
-    /**
-     * Constructor for objects of class NumberCrusherTest
-     */
     public NumberCrusherTestTopClass()
     {
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
+ /**
+ * Testet die Funktionen sum, substract, divide, swirl, divide.
+ *
+ * @param String[] Argumente
+ */
     public static void main(String[] args)
     {   
         String[] operations = {"sum", "swirl", "divide", "substract", "average"};
         int groesse = 10;   
         NumberCrusherTopClass topclass = new NumberCrusherTopClass(groesse);    
         topclass.crush(operations);
-        
-        
-        
     }
 }
