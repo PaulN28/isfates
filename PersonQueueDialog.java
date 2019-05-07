@@ -3,8 +3,8 @@ import java.util.*;
 /**
  * Testklasse der Klasse PersonQueue
  *
- * @author Nils Gamlin
- * @version 26.01.2019
+ * @author Paul Nicolas u. Nils Gamlin
+ * @version 26.05.2019
  */
 
 public class PersonQueueDialog
