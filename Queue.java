@@ -1,11 +1,10 @@
- 
-
 /**
  * Das Interface Queue ist eine Art Schablone fuer die Klassen StringQueue, und PersonQueue
  *
- * @author Nils Gamlin
- * @version 26.01.2019
+ * @author Paul Nicolas u. Nils Gamlin
+ * @version 05.03.2019
  */
+
 public interface Queue
 { 
     void addLast(Object o); // Objekt hinten anfuegen
