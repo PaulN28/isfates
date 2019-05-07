@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Arrays;
 
 /**
- * Write a description of class NumberCrusher here.
+ * Klasse die die Funktionen sum, substract, divide, swirl, divide mithilfe von Anonymen Klassen beinhaltet.
  *
  * @author Nils Gamlin
  * @version 03.05.2019
@@ -13,14 +13,16 @@ public class NumberCrusherAnonym
         public void funktion();
     }
 
-    // instance variables - replace the example below with your own
     private int arrayGroesse;
     private float[] floatArray;
     Random random;
 
     /**
-     * Constructor for objects of class NumberCrusher
+     * Konstruktor der einen floatArray initialisiert
+     *
+     * @param int Arraygroesse
      */
+    
     public NumberCrusherAnonym(int arrayGroesse)
     {
         this.arrayGroesse = arrayGroesse;
@@ -34,6 +36,12 @@ public class NumberCrusherAnonym
         System.out.println(Arrays.toString(floatArray));
     }
 
+    /**
+     * Implementiert die Funktionen sum, substract, divide, swirl, average mthilfe von Anonymen Klassen.
+     *
+     * @param String[] Operationen die auf dem Array durchgeführt werden müssen.
+     */
+    
     public void crush(String[] operations){
 
         //---------------------Funktionen---------------------
@@ -55,7 +63,7 @@ public class NumberCrusherAnonym
                     Random random = new Random();
                     float aux;
 
-                    for(int i = 0; i <= arrayGroesse; i++){ //traiter s par hasard ils tombent sur le meme index ?
+                    for(int i = 0; i <= arrayGroesse; i++){ 
 
                         int firstRandomIndex = random.nextInt(arrayGroesse);
                         int secondRandomIndex = random.nextInt(arrayGroesse);
@@ -153,8 +161,13 @@ public class NumberCrusherAnonym
         }
     } 
     
-          public String toString(){
-        
+    /**
+     * toString() Methode die das aktuelle Array ausgibt.
+     *
+     * @return Inhalt des Arrays
+     */
+    
+    public String toString(){
         String inhalt = "Array :";
         
         for(int i = 0; i < arrayGroesse;  i++){
