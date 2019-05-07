@@ -139,6 +139,8 @@ public class PersonQueueDialog
                 else{
                     System.out.println(MSG_PERSONQUEUE_EXISTIERT_NICHT);
                 }
+                break;
+                
             case SMALLEST:
                 if(personqueue_existiert){
                     System.out.println(personQueue.smallest());
