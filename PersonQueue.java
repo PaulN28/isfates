@@ -1,6 +1,4 @@
- 
-
-/**
+ /**
  * PersonQueue ist eine implementierung des Interface Queue 
  *
  * @author Nils Gamlin
@@ -65,18 +63,35 @@ public class PersonQueue implements Queue
         return deletedElement;
     }  
 
+
     interface PersonIterator extends java.util.Iterator<Person>{ };
 
     public class Iterator implements PersonIterator{
         private int index ;
+        
+    /**
+    * Konstruktor des Iterators
+    */
 
         public Iterator(){
             index = 0;
         }
+        
+    /**
+    * Checkt ob es noch ein Element nach dem aktuellen Element gibt.
+    *
+    * @return boolean ob das noch ein Element nach dem aktuellen Element gibt.
+    */
 
         public boolean hasNext(){
             return index < size();
         }
+        
+    /**
+    * Ermöglicht es zur nächsten Person zu springen.
+    *
+    * @param Person nächste Person.
+    */
 
         public Person next(){
             Person next = get(index);
@@ -98,7 +113,9 @@ public class PersonQueue implements Queue
     }
 
     /**
-     * 
+     * Gibt den kleinsten Vornamen zurück.
+     *
+     * @return String kleinster Vornamen.
      */
 
     public String smallest(){
