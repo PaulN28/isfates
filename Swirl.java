@@ -1,23 +1,26 @@
- 
-
 import java.util.Random;
 import java.util.Arrays;
 
 /**
- * Write a description of class Swirl here.
+ * Die Klasse Swirl ermöglicht es, ohne Anonyme Klasse, die Funktion swirl zu implementieren.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Paul Nicolas u. Nils Gamlin
+ * @version 03.05.2019
  */
+
 public class Swirl
 {
-    /**
-     * Constructor for objects of class Swirl
-     */
     public Swirl()
     {
     }
 
+ /**
+ *  Führt n zufällige Vertauschungen der Datenfelder durch; n ist durch die Länge des
+ *  float-Arrays gegeben.
+ *
+ * @param float[] Array durch den iteriert wird. 
+ */
+ 
     public static void swirl(float[] floatArray){
         int arrayGroesse = floatArray.length;
         System.out.println("Before swirl: " + Arrays.toString(floatArray));
