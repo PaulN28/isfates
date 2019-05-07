@@ -1,21 +1,23 @@
- 
-
 import java.util.Arrays;
 
 /**
- * Write a description of class Divide here.
+ * Die Klasse Divide ermöglicht es, ohne Anonyme Klasse, die Funktion divide zu implementieren.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Paul Nicolas u. Nils Gamlin
+ * @version 03.05.2019
  */
 public class Divide
 {
-    /**
-     * Constructor for objects of class Divide
-     */
     public Divide()
     {
     }
+ 
+ /**
+ * Teilt den groessten Wert mit dem kleinsten und speichert in dan an Stelle des groessten Werts. 
+ * Teilt den 2. groessten Wert mit dem 2. kleinsten und speichert in dann an Stelle des 2. groessten Werts. etc...
+ *
+ * @param float[] Array durch den iteriert wird.
+ */
 
     public static void divide(float[] floatArray){
         int arrayGroesse = floatArray.length;
