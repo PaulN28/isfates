@@ -1,4 +1,4 @@
-package NumberCrusher;
+ 
 
 import java.util.Arrays;
 

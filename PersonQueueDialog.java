@@ -1,5 +1,3 @@
-package IteratorQueue;
-
 import java.util.*;
 
 /**
@@ -27,6 +25,7 @@ public class PersonQueueDialog
     private static final int ADD_LAST = 2;
     private static final int REMOVE_FIRST = 3;
     private static final int PRINT = 4; 
+    private static final int SMALLEST = 5; 
     private static final int ENDE = 0;
     
     
@@ -92,6 +91,7 @@ public class PersonQueueDialog
                          ADD_LAST + ": Add last\n" +
                          REMOVE_FIRST + ": Remove first\n" +
                          PRINT + ": Print\n" + 
+                         SMALLEST + ": Smallest\n" + 
                          ENDE + ": Ende\n"
                          );
         funktion = input.nextInt();
@@ -139,6 +139,14 @@ public class PersonQueueDialog
                 else{
                     System.out.println(MSG_PERSONQUEUE_EXISTIERT_NICHT);
                 }
+            case SMALLEST:
+                if(personqueue_existiert){
+                    System.out.println(personQueue.smallest());
+                }
+                else{
+                    System.out.println(MSG_PERSONQUEUE_EXISTIERT_NICHT);
+                }    
+        
                 break;
             case ENDE:
                 System.out.println("Programmende");
@@ -155,7 +163,7 @@ public class PersonQueueDialog
         System.out.println("\nName: ");
         name = input.nextLine();
         System.out.println("\n" + vorname + " " + name);
-        return new Person(vorname, name);
+        return new Person(name, vorname);
     }
     
     /**

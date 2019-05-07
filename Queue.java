@@ -1,4 +1,4 @@
-package IteratorQueue;
+ 
 
 /**
  * Das Interface Queue ist eine Art Schablone fuer die Klassen StringQueue, und PersonQueue

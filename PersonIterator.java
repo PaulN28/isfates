@@ -1,6 +1,3 @@
-package IteratorQueue;
-
-
 /**
  * Write a description of interface PersonIterator here.
  *

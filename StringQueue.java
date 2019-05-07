@@ -1,4 +1,4 @@
-package IteratorQueue;
+ 
 
 /**
  * StringQueue ist eine implementierung des Interface Queue 

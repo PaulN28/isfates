@@ -1,4 +1,4 @@
-package IteratorQueue;
+ 
 
 /**
  * PersonQueue ist eine implementierung des Interface Queue 
@@ -65,8 +65,7 @@ public class PersonQueue implements Queue
         return deletedElement;
     }  
 
-    interface PersonIterator extends java.util.Iterator<Person>{
-    };
+    interface PersonIterator extends java.util.Iterator<Person>{ };
 
     public class Iterator implements PersonIterator{
         private int index ;
@@ -102,20 +101,25 @@ public class PersonQueue implements Queue
      * 
      */
 
-    public String Smallest(){
+    public String smallest(){
         PersonIterator iterator = new Iterator();
-        String smallest = iterator.next().getVorname();
-        String current = iterator.next().getVorname();
-
-        while(iterator.hasNext()){
+        
+        String smallest = "Noch keine Werte";
+        String current;
+        
+        if  ( iterator.hasNext() )
+         {
+        smallest =  iterator.next().getVorname();
+        
+        while(iterator.hasNext()){            
             current = iterator.next().getVorname();
-            if(current.compareTo(smallest) < 0){ //compareTo() negative int --> if left Object is smaller; 0 --> if left Object is equal; positive int --> if left Object is bigger 
+            if(smallest.length() > current.length()){ 
                 smallest = current;
             }
         }
-
-        return smallest;
     }
+    return smallest;
+}
 
     /**
      * Gibt das i-te Element zurueck

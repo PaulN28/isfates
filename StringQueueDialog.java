@@ -1,5 +1,3 @@
-package IteratorQueue;
-
 import java.util.*;
 
 

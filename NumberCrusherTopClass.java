@@ -1,5 +1,3 @@
-package NumberCrusher;
-
 import java.util.Random;
 import java.util.Arrays;
 
@@ -12,7 +10,7 @@ import java.util.Arrays;
 public class NumberCrusherTopClass
 {
     private int arrayGroesse;
-    private static float[] floatArray; //meme probleme que la semaine dernière pourquoi faut tout mettre en static ?
+    private float[] floatArray; //meme probleme que la semaine dernière pourquoi faut tout mettre en static ?
     Random random;
 
     /**
@@ -31,7 +29,17 @@ public class NumberCrusherTopClass
         System.out.println(Arrays.toString(floatArray));
     }
     
-    public static void crunch(String[] operations){
+    public String toString(){
+        
+        String inhalt = "Array :";
+        
+        for(int i = 0; i < arrayGroesse;  i++){
+            inhalt += " " + floatArray[i];
+        }
+        return inhalt;
+    }
+    
+    public void crush(String[] operations){
         for(String i : operations){
             switch(i){
                 case "sum":
@@ -52,6 +60,10 @@ public class NumberCrusherTopClass
 
                 case "swirl":
                 Swirl.swirl(floatArray);
+                break;
+                
+                default:
+                System.out.println("Falsche Funktion");
                 break;
             }
         }
