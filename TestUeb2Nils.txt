@@ -79,7 +79,7 @@ Packet size 32k bytes:  290.72 KByte/s Tx,  1539.36 KByte/s Rx.
 Done.
 
 Tx : 0.28 MBytes/s 
-Tx : 1.53 MBytes/s 
+Rx : 1.53 MBytes/s 
 
 UDP LAN
 
