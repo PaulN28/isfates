@@ -14,6 +14,8 @@ Packet size 16k bytes:  7659.88 KByte/s Tx,  7556.14 KByte/s Rx.
 Packet size 32k bytes:  9649.90 KByte/s Tx,  8279.32 KByte/s Rx.
 Done.
 
+Tx : 8.34MBytes/s
+Rx : 8.42MBytes/s
 ----------------------------------------------------------------
 
 UDP Eduroam
@@ -30,6 +32,10 @@ Packet size 16k bytes:  13.19 MByte/s (52%) Tx,  2574 Byte/s (99%) Rx.
 Packet size 32k bytes:  11.57 MByte/s (59%) Tx,  24.98 KByte/s (99%) Rx.
 Done.
 
+Tx : 12.55 MBytes/s (V)
+Rx : 1.80 MBytes/s (V)
+
+Moyenne : 
 *************************************HIZ***************************************************
 TCP HIZ
 
@@ -44,6 +50,10 @@ Packet size  8k bytes:  5518.12 KByte/s Tx,  9646.21 KByte/s Rx.
 Packet size 16k bytes:  8295.73 KByte/s Tx,  7842.87 KByte/s Rx.
 Packet size 32k bytes:  9731.19 KByte/s Tx,  7450.66 KByte/s Rx.
 Done.
+
+Tx: 7.80 Mbytes/s
+Rx: 8.16 Mbytes/s
+
 -----------------------------------------------------------------------
 
 UDP HIZ
@@ -84,3 +94,30 @@ Packet size 32k bytes:  290.72 KByte/s Tx,  1539.36 KByte/s Rx.
 Done.
 
 
+********************Home WLAN*************************
+
+TCP WLAN
+
+Packet size  1k bytes:  245.32 KByte/s Tx,  889.71 KByte/s Rx.
+Packet size  2k bytes:  173.19 KByte/s Tx,  914.74 KByte/s Rx.
+Packet size  4k bytes:  272.05 KByte/s Tx,  1105.25 KByte/s Rx.
+Packet size  8k bytes:  236.29 KByte/s Tx,  1094.62 KByte/s Rx.
+Packet size 16k bytes:  258.60 KByte/s Tx,  582.73 KByte/s Rx.
+Packet size 32k bytes:  250.05 KByte/s Tx,  682.05 KByte/s Rx.
+
+Tx : 0.24 MBytes/s
+Rx : 0.88 MBytes/s
+
+UDP WLAN
+
+UDP connection established.
+Packet size  1k bytes:  265.65 KByte/s (99%) Tx,  1740.31 KByte/s (95%) Rx.
+Packet size  2k bytes:  4771 Byte/s (99%) Tx,  25.58 KByte/s (99%) Rx.
+Packet size  4k bytes:  18.63 KByte/s (99%) Tx,  25.88 KByte/s (99%) Rx.
+Packet size  8k bytes:  15.98 KByte/s (99%) Tx,  27.78 KByte/s (99%) Rx.
+Packet size 16k bytes:  87.99 KByte/s (99%) Tx,  7748 Byte/s (99%) Rx.
+Packet size 32k bytes:  5459 Byte/s (99%) Tx,  15.18 KByte/s (99%) Rx.
+Done.
+
+Tx : 0.066 MBytes/s (V)
+Rx : 0.3 Mbytes/s (V)
