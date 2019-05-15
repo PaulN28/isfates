@@ -1,0 +1,54 @@
+**************************************Eduroam**********************************************
+
+TCP Eduroam 
+
+NETIO - Network Throughput Benchmark, Version 1.32
+(C) 1997-2012 Kai Uwe Rommel
+
+TCP connection established.
+Packet size  1k bytes:  9736.38 KByte/s Tx,  7320.23 KByte/s Rx.
+Packet size  2k bytes:  8067.43 KByte/s Tx,  8762.04 KByte/s Rx.
+Packet size  4k bytes:  7649.69 KByte/s Tx,  9611.91 KByte/s Rx.
+Packet size  8k bytes:  7281.48 KByte/s Tx,  8992.90 KByte/s Rx.
+Packet size 16k bytes:  7659.88 KByte/s Tx,  7556.14 KByte/s Rx.
+Packet size 32k bytes:  9649.90 KByte/s Tx,  8279.32 KByte/s Rx.
+Done.
+
+----------------------------------------------------------------
+
+UDP Eduroam
+
+NETIO - Network Throughput Benchmark, Version 1.32
+(C) 1997-2012 Kai Uwe Rommel
+
+UDP connection established.
+Packet size  1k bytes:  14.33 MByte/s (0%) Tx,  10.00 MByte/s (51%) Rx.
+Packet size  2k bytes:  12.64 MByte/s (32%) Tx,  660.73 KByte/s (99%) Rx.
+Packet size  4k bytes:  13.54 MByte/s (37%) Tx,  74.67 KByte/s (99%) Rx.
+Packet size  8k bytes:  10.03 MByte/s (64%) Tx,  61.15 KByte/s (99%) Rx.
+Packet size 16k bytes:  13.19 MByte/s (52%) Tx,  2574 Byte/s (99%) Rx.
+Packet size 32k bytes:  11.57 MByte/s (59%) Tx,  24.98 KByte/s (99%) Rx.
+Done.
+
+*************************************HIZ***************************************************
+TCP HIZ
+
+NETIO - Network Throughput Benchmark, Version 1.32
+(C) 1997-2012 Kai Uwe Rommel
+
+TCP connection established.
+Packet size  1k bytes:  4988.54 KByte/s Tx,  7279.68 KByte/s Rx.
+Packet size  2k bytes:  9834.86 KByte/s Tx,  7287.19 KByte/s Rx.
+Packet size  4k bytes:  8457.16 KByte/s Tx,  9482.60 KByte/s Rx.
+Packet size  8k bytes:  5518.12 KByte/s Tx,  9646.21 KByte/s Rx.
+Packet size 16k bytes:  8295.73 KByte/s Tx,  7842.87 KByte/s Rx.
+Packet size 32k bytes:  9731.19 KByte/s Tx,  7450.66 KByte/s Rx.
+Done.
+-----------------------------------------------------------------------
+
+UDP HIZ
+
+NETIO - Network Throughput Benchmark, Version 1.32
+(C) 1997-2012 Kai Uwe Rommel
+connect(): error code 10061
+
