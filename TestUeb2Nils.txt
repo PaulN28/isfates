@@ -52,3 +52,35 @@ NETIO - Network Throughput Benchmark, Version 1.32
 (C) 1997-2012 Kai Uwe Rommel
 connect(): error code 10061
 
+
+**************************************Home LAN**********************************
+UDP LAN
+
+NETIO - Network Throughput Benchmark, Version 1.32
+(C) 1997-2012 Kai Uwe Rommel
+
+UDP connection established.
+Packet size  1k bytes:  269.79 KByte/s (99%) Tx,  1803.25 KByte/s (95%) Rx.
+Packet size  2k bytes:  4778 Byte/s (99%) Tx,  39.41 KByte/s (99%) Rx.
+Packet size  4k bytes:  120.63 KByte/s (99%) Tx,  28.88 KByte/s (99%) Rx.
+Packet size  8k bytes:  5460 Byte/s (99%) Tx,  21.00 KByte/s (99%) Rx.
+Packet size 16k bytes:  5448 Byte/s (99%) Tx,  10.14 KByte/s (99%) Rx.
+Packet size 32k bytes:  5460 Byte/s (99%) Tx,  3011 Byte/s (99%) Rx.
+Done.
+
+
+TCP LAN
+
+NETIO - Network Throughput Benchmark, Version 1.32
+(C) 1997-2012 Kai Uwe Rommel
+
+TCP connection established.
+Packet size  1k bytes:  276.88 KByte/s Tx,  1536.08 KByte/s Rx.
+Packet size  2k bytes:  281.30 KByte/s Tx,  1611.25 KByte/s Rx.
+Packet size  4k bytes:  279.20 KByte/s Tx,  1491.30 KByte/s Rx.
+Packet size  8k bytes:  279.92 KByte/s Tx,  1442.52 KByte/s Rx.
+Packet size 16k bytes:  247.44 KByte/s Tx,  1592.20 KByte/s Rx.
+Packet size 32k bytes:  290.72 KByte/s Tx,  1539.36 KByte/s Rx.
+Done.
+
+
