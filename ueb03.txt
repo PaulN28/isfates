@@ -70,18 +70,18 @@
                     ###>                           |       |        |              |
                     ###>                           | IPv4  |  IPv4  |    IPv4      |
                     ###> --------------------------|-----------------------------
-                    ###> stl-v-xxx.htwsaar.de      |       |        |
-                    ###> stl-s-stud.htwsaar.de     |       |        |   0.20
-                    ###> www.htwsaar.de            |       |        |   0.92
-                    ###> www.uni-saarland.de       |       |        |   0.77
-                    ###> www.uni-kaiserslautern.de |       |        |   13.51
-                    ###> www.dfn.de                |       |        |   18.84
-                    ###> www.zeit.de               |       |        |   9.48
-                    ###> dns-1.dfn.de              |       |        |   18.69
-                    ###> www.nasa.gov              |       |        |   9.45
-                    ###> www.nasa.com              |       |        |   119.04
-                    ###> www.washington.org        |       |        |   9.12
-                    ###> www.sydney.com            |       |        |   346
+                    ###> stl-v-xxx.htwsaar.de      |    ipcping    |  0.17  |  ping: cannot set preload to value > 3
+                    ###> stl-s-stud.htwsaar.de     |  0.00 |  0.65  |   0.20
+                    ###> www.htwsaar.de            |  1.00 |  1.30  |   0.92
+                    ###> www.uni-saarland.de       |  1.00 |  0.93  |   0.77
+                    ###> www.uni-kaiserslautern.de | 14.00 | 13.73  |  13.51
+                    ###> www.dfn.de                | 20.00 | 18.99  |  18.84
+                    ###> www.zeit.de               |  9.00 |  9.61  |   9.48
+                    ###> dns-1.dfn.de              | 20.00 | 19.10  |  18.69
+                    ###> www.nasa.gov              | 10.00 |  9.58  |   9.45
+                    ###> www.nasa.com              |120.00 |114.03  | 119.04
+                    ###> www.washington.org        |  9.00 |  9.31  |   9.12
+                    ###> www.sydney.com            |353.00 |387.92  | 346.00
 
     *) diese VM muss natuerlich vorher von Ihnen gestartet werden.
 
@@ -98,14 +98,14 @@
             stl-s-stud.htwsaar.de       |       33     |   34
             www.htwsaar.de              |       33     |   35
             www.uni-saarland.de         |       27     |   29
-            www.uni-kaiserslautern.de   |        32    |   34
-            www.dfn.de                  |      34      |   36
-            www.zeit.de                 |         23   |   24
-            dns-1.dfn.de                |        34    |   35
+            www.uni-kaiserslautern.de   |       32     |   34
+            www.dfn.de                  |       34     |   36
+            www.zeit.de                 |       23     |   24
+            dns-1.dfn.de                |       34     |   35
             www.nasa.gov                |       23     |   24
-            www.nasa.com                |     133      |   134
-            www.washington.org          |      21      |   24
-            www.sydney.com              |     341      |   344
+            www.nasa.com                |      133     |  134
+            www.washington.org          |       21     |   24
+            www.sydney.com              |      341     |  344
 
 
 
