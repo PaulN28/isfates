@@ -70,7 +70,7 @@
                     ###>                           |       |        |              |
                     ###>                           | IPv4  |  IPv4  |    IPv4      |
                     ###> --------------------------|-----------------------------
-                    ###> stl-v-xxx.htwsaar.de      |    ipcping    |  0.17  |  ping: cannot set preload to value > 3
+                    ###> stl-v-xxx.htwsaar.de      | <1.00 |  0.17  |  ping: cannot set preload to value > 3
                     ###> stl-s-stud.htwsaar.de     |  0.00 |  0.65  |   0.20
                     ###> www.htwsaar.de            |  1.00 |  1.30  |   0.92
                     ###> www.uni-saarland.de       |  1.00 |  0.93  |   0.77
