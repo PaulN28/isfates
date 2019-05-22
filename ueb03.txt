@@ -1,0 +1,121 @@
+
+
+    #######################################################################
+    Dipl.-Ing. Wolfgang Pauly / Dipl.-Inform. Achim Pick            SS 2019
+    #######################################################################
+
+
+    03. Uebung zur Vorlesung :  PI/DFHI - Rechnernetze             (PIB-RN)
+    =======================================================================
+
+    Abgabe: Zur Vorlesung in der KW 21
+
+    Form  : - in schriftlicher Form, anzugeben sind die zur Loesung der
+              Aufgaben notwendigen LINUX-Kommandos bzw. LINUX-Kommandofolgen,
+              deren Ausgaben - natuerlich nur auszugsweise !!! -  und
+              natuerlich die Antworten auf die einzelnen Fragen.
+
+    Quelle : ~pauly/RECHNERNETZE-PIB-DFHI-Praktikum-ss2019/ueb03/ueb03.txt
+
+
+    HINWEIS: freiwillige Zusaetze gehen nicht in die Bewertung ein!!
+
+
+
+    1. Aufgabe - Rechnerantwortzeiten messen und interpretieren
+    -----------------------------------------------------------
+    Das Kommando ping (lesen Sie die Manualpages RedHat/CentOS/XUbuntu/Win10)
+    bietet eine einfache Moeglichkeit die Antwortzeiten eines Rechners
+    im Internet zu bestimmen.
+
+    Bestimmen Sie die Antwortzeiten
+
+    - mittels einer Win10-VM und dem Kommando : ping
+    - mittels einer Redhat-/Centos-VM und dem Kommando : ping
+    - mittels dem stl-s-stud und dem Kommando : ping
+
+    rufen Sie das Kommando ping mit entsprechenden Schaltern so auf, dass IPv4 zum Transport
+    der Ping-Nachrichten genutzt wird, 10 Anfragen mit jeweils 40 Datenbytes erfolgen.
+    unter LINUX sollen die Antwortzeilen unter anderem
+
+           a) den Ziel-DNS-Hostname und die Ziel-IPv4-Adresse enthalten
+
+           b) nur die Ziel-IPv4-Adresse enthalten
+
+    (freiwilliger Zusatz benutzen IPv6 zum Transport der Ping-Nachrichten )
+
+    - fuer folgende Rechner :
+
+                    IPv4/IPv6
+                    ----------------------------
+                    <> stl-v-xxx.htwsaar.de  *)
+                    <> stl-s-stud.htwsaar.de
+                    <> www.htwsaar.de
+                    <> www.uni-saarland.de
+                    <> www.uni-kaiserslautern.de
+                    <> www.dfn.de
+                    <> www.zeit.de
+                    <> dns-1.dfn.de
+                    <> www.nasa.gov
+                    <> www.nasa.com
+                    <> www.washington.org
+                    <> www.sydney.com
+
+
+
+                    ###> Rechnername               | Durchschnitts-Antwortzeiten   |
+                    ###>                           |        in ms                  |
+                    ###>                           |                               |
+                    ###>                           | Win10 | CentOS | stl-s-stud   |
+                    ###>                           |       |        |              |
+                    ###>                           | IPv4  |  IPv4  |    IPv4      |
+                    ###> --------------------------|-----------------------------
+                    ###> stl-v-xxx.htwsaar.de      |       |        |
+                    ###> stl-s-stud.htwsaar.de     |       |        |   0.20
+                    ###> www.htwsaar.de            |       |        |   0.92
+                    ###> www.uni-saarland.de       |       |        |   0.77
+                    ###> www.uni-kaiserslautern.de |       |        |   13.51
+                    ###> www.dfn.de                |       |        |   18.84
+                    ###> www.zeit.de               |       |        |   9.48
+                    ###> dns-1.dfn.de              |       |        |   18.69
+                    ###> www.nasa.gov              |       |        |   9.45
+                    ###> www.nasa.com              |       |        |   119.04
+                    ###> www.washington.org        |       |        |   9.12
+                    ###> www.sydney.com            |       |        |   346
+
+    *) diese VM muss natuerlich vorher von Ihnen gestartet werden.
+
+    - weitere Messmoeglichkeiten mit eigenem Rechner/Laptop :
+            * HOME-LAN
+            * HOME-WLAN
+
+                                        | Durchschnitts-Antwortzeiten |
+                                        |        in Millisekunden     |
+                                        |                             |
+                                        |    HOME-LAN  |    HOME-WLAN |
+            ----------------------------------------------------------
+            stl-v-xxx.htwsaar.de        |              |
+            stl-s-stud.htwsaar.de       |       33     |   34
+            www.htwsaar.de              |       33     |   35
+            www.uni-saarland.de         |       27     |   29
+            www.uni-kaiserslautern.de   |        32    |   34
+            www.dfn.de                  |      34      |   36
+            www.zeit.de                 |         23   |   24
+            dns-1.dfn.de                |        34    |   35
+            www.nasa.gov                |       23     |   24
+            www.nasa.com                |     133      |   134
+            www.washington.org          |      21      |   24
+            www.sydney.com              |     341      |   344
+
+
+
+    - weitere Messmoeglichkeiten mit eigenem Rechner/Laptop (freiwilliger Zusatz ) :
+            * STL-LAN
+            * HTW-WLAN (Eduroam)
+
+
+    Wie erklaeren Sie sich die verschieden langen Antwortzeiten ??
+
+    Interpretieren Sie die Messergebnisse, was sagen sie aus ?
+
+    Was faellt Ihnen sonst noch so auf ?
