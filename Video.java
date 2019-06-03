@@ -4,10 +4,7 @@
 * @version 2019
 */
 
-
-//Change name of class. VIDEO anstatt DVD
-
-public class DVD extends Artikel {
+public class Video extends Artikel {
 
   //------------------Attribute----------------------------------
 
@@ -22,13 +19,13 @@ public class DVD extends Artikel {
   * @param artikelbezeichnung darf nicht leer sein;
   * @param artikelbestand darf nie kleiner als 0 sein.
   * @param artikelpreis muss groesser als 0 sein.
-  * @param titel der DVD darf nicht leer sein;
-  * @param spieldauer der DVD darf nie kleiner/gleich 0 sein.
-  * @param erscheinungsjahr der DVD zwischen 1950 und 2014.
-  * @return Ein Klassen-Objekt DVD
+  * @param titel der Video darf nicht leer sein;
+  * @param spieldauer der Video darf nie kleiner/gleich 0 sein.
+  * @param erscheinungsjahr der Video zwischen 1950 und 2014.
+  * @return Ein Klassen-Objekt Video
   */
 
-  public DVD ( int artikelnummer, String artikelbezeichnung,
+  public Video ( int artikelnummer, String artikelbezeichnung,
   int artikelbestand, double artikelpreis,
   String  titel, int  spieldauer, int  erscheinungsjahr) {
     super(artikelnummer, artikelbezeichnung, artikelbestand, artikelpreis);
@@ -90,7 +87,7 @@ public class DVD extends Artikel {
   }
 
   /**
-  * Bereitet das DVD-Objekt als Zeichenkette auf
+  * Bereitet das Video-Objekt als Zeichenkette auf
   */
   public String toString() {
     return String.format("%s %s %d %4d", super.toString(), titel, spieldauer, erscheinungsjahr);
