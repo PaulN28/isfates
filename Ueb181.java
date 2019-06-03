@@ -1,6 +1,17 @@
 import java.util.Random;
 
 public class Ueb181 {
+   
+   /**
+   * Die Methode soll die Funktion wiederholt (n-Iterationen) auf dem vorherigen Ergebnis anwenden.
+   *
+   * @param double Startwert.
+   * @param int Anzahl an Iterationen.
+   * @param MyFunction Funktion die angewendet werden soll.
+   *
+   * @return Double Wert der letzten Iteration.
+   */
+    
     public static double iterate(double start, int iterations, MyFunction function){
         double aux = start;
         for(int i = 0; i < iterations; i++){
@@ -9,6 +20,12 @@ public class Ueb181 {
         }
         return aux;
     }
+    
+    /**
+   * Diese Methode soll die  Methode Iterate testen.
+   *
+   * @param String[] beliebige Argumente. 
+   */
 
     public static void main(String[] args){
         System.out.println("########## f(x) = 2x ##########\n");
