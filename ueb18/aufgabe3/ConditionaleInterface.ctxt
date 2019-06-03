@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ConditionaleInterface
+comment0.text=\r\n\ ConditionaleInterface\ der\ Uebung\ 17.\r\n\r\n\ @author\ Paul\ Nicolas\ u.\ Nils\ Gamlin\r\n\ @version\ 12.05.2019\r\n
+comment1.params=bedingung
+comment1.target=ConditionaleInterface\ conditionateInput(java.util.function.IntPredicate)
+comment1.text=\r\n\ Nimmt\ ein\ Pr\u00C3\u00A4dikat\ als\ Argument\ entgegen\ und\ gibt\ einen\ Lambda-Ausdruck\ zur\u00C3\u00BCck\r\n\ Der\ Lambda-Ausdruck\ pr\u00C3\u00BCft\ f\u00C3\u00BCr\ einen\ gegebenen\ Integer-Wert,\ ob\ dieser\ das\ Pr\u00C3\u00A4dikat\ erf\u00C3\u00BCllt\r\n
+comment2.params=bedingung
+comment2.target=ConditionaleInterface\ conditionateOutput(java.util.function.IntPredicate)
+comment2.text=\r\n\ Diese\ Methode\ nimmt\ ein\ Pr\u00C3\u00A4dikat\ als\ Argument\ entgegen\ und\ gibt\ einen\ Lambda-Ausdruck\ zur\u00C3\u00BCck.\ Der\ Lambda-Ausdruck\ pr\u00C3\u00BCft,\ ob\ das\r\n\ Ergebnis\ der\ apply-Methode\ das\ Pr\u00C3\u00A4dikat\ erf\u00C3\u00BCllt.\ \r\n
+numComments=3

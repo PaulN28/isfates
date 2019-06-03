@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Video
+comment0.text=\ Klasse\ Video\ (Unterklasse\ von\ Artikel)\r\n\r\n\ @author\ NICOLAS\r\n\ @version\ 2019\r\n
+comment1.params=artikelnummer\ artikelbezeichnung\ artikelbestand\ artikelpreis\ titel\ spieldauer\ erscheinungsjahr
+comment1.target=Video(int,\ java.lang.String,\ int,\ double,\ java.lang.String,\ int,\ int)
+comment1.text=\r\n\ @param\ artikelnummer\ muss\ 4-stellig\ sein;\r\n\ @param\ artikelbezeichnung\ darf\ nicht\ leer\ sein;\r\n\ @param\ artikelbestand\ darf\ nie\ kleiner\ als\ 0\ sein.\r\n\ @param\ artikelpreis\ muss\ groesser\ als\ 0\ sein.\r\n\ @param\ titel\ der\ Video\ darf\ nicht\ leer\ sein;\r\n\ @param\ spieldauer\ der\ Video\ darf\ nie\ kleiner/gleich\ 0\ sein.\r\n\ @param\ erscheinungsjahr\ der\ Video\ zwischen\ 1950\ und\ 2014.\r\n\ @return\ Ein\ Klassen-Objekt\ Video\r\n
+comment2.params=titel
+comment2.target=void\ setTitel(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ getTitel()
+comment4.params=spieldauer
+comment4.target=void\ setSpieldauer(int)
+comment5.params=
+comment5.target=int\ getSpieldauer()
+comment6.params=erscheinungsjahr
+comment6.target=void\ setErscheinungsjahr(int)
+comment7.params=
+comment7.target=int\ getErscheinungsjahr()
+comment8.params=
+comment8.target=java.lang.String\ getBeschreibung()
+comment8.text=\r\n\ @return\ gibt\ den\ Titel\ zurueck\r\n
+comment9.params=
+comment9.target=java.lang.String\ toString()
+comment9.text=\r\n\ Bereitet\ das\ Video-Objekt\ als\ Zeichenkette\ auf\r\n
+numComments=10

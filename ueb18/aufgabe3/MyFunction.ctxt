@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=MyFunction
+comment0.text=\r\n\ MyFunction\ Interface\ der\ Ueb17.\r\n\r\n\ @author\ Paul\ Nicolas\ u.\ Nils\ Gamlin\r\n\ @version\ 12.05.2019\r\n
+comment1.params=i
+comment1.target=int\ apply(int)
+numComments=2

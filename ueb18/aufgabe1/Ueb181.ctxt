@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Ueb181
+comment1.params=start\ iterations\ function
+comment1.target=double\ iterate(double,\ int,\ Aufgabe1Interface)
+comment1.text=\r\n\ Die\ Methode\ soll\ die\ Funktion\ wiederholt\ (n-Iterationen)\ auf\ dem\ vorherigen\ Ergebnis\ anwenden.\r\n\r\n\ @param\ double\ Startwert.\r\n\ @param\ int\ Anzahl\ an\ Iterationen.\r\n\ @param\ MyFunction\ Funktion\ die\ angewendet\ werden\ soll.\r\n\r\n\ @return\ Double\ Wert\ der\ letzten\ Iteration.\r\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment2.text=\r\n\ Diese\ Methode\ soll\ die\ \ Methode\ Iterate\ testen.\r\n\r\n\ @param\ String[]\ beliebige\ Argumente.\ \r\n
+numComments=3
