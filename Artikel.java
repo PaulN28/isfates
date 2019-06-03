@@ -2,7 +2,7 @@ package aufgabe2;
 
 /**
 * Ein Artikel hat eine Nummer, eine Bezeichnung, einen bestimmten Bestand und einen Preis
-* Es gibt Methoden um den Bestand/Preis zu verändern
+* Es gibt Methoden um den Bestand/Preis zu veraendern
 *
 * @author Paul Nicolas & Nils Gamlin
 * @date 01/12/2018
@@ -24,7 +24,7 @@ public class Artikel
   //------------------Konstruktoren-------------------------------
 
   /**
-  * Konstruktor für Objekte der Klasse Artikel mit 4 Argumenten
+  * Konstruktor fuer Objekte der Klasse Artikel mit 4 Argumenten
   * @param artikelnummer muss 4-stellig sein;
   * @param artikelbezeichnung darf nicht leer sein;
   * @param artikelbestand darf nie kleiner als 0 sein.
@@ -43,7 +43,7 @@ public class Artikel
   }
 
   /**
-  * Konstruktor für Objekte der Klasse Artikel mit 2 Argumenten
+  * Konstruktor fuer Objekte der Klasse Artikel mit 2 Argumenten
   * Dieser Konstruktor bezieht sich auf den vorherigen Konstruktor (this Methode)
   * @param artikelnummer muss 4-stellig sein;
   * @param artikelbezeichnung darf nicht leer sein;
@@ -57,22 +57,22 @@ public class Artikel
   //------------------Methoden zugang, abgang, aenderePreis-------------------------------
 
   /**
-  * Fügt Artikel zum Bestand hinzu
+  * Fuegt Artikel zum Bestand hinzu
   *
-  * @param  bestand : Menge von Artikeln (muss größer als 0 sein), die man zum aktuellen Bestand hinzufügen möchte
-  * Die setArtikelbestand Methode wird aufgerufen, um den Artikelbestand zu überprüfen und ändert die Variable artikelbestand
+  * @param  bestand : Menge von Artikeln (muss groesser als 0 sein), die man zum aktuellen Bestand hinzufuegen moechte
+  * Die setArtikelbestand Methode wird aufgerufen, um den Artikelbestand zu ueberpruefen und aendert die Variable artikelbestand
   */
   public void zugang(int bestand)
   {
-    check( bestand > MIN_ARTIKEL_BESTAND, "Du kannst nicht 0 oder weniger Artikel hinzufügen");
+    check( bestand > MIN_ARTIKEL_BESTAND, "Du kannst nicht 0 oder weniger Artikel hinzufuegen");
     setArtikelbestand(this.artikelbestand + bestand);
   }
 
   /**
   * Bucht Artikel vom Bestand ab
   *
-  * @param  bestand : Menge von Artikeln (muss größer als 0 sein), die man vom aktuellen Bestand abbuchen möchte
-  * Die setArtikelbestand Methode wird aufgerufen, um den Artikelbestand zu überprüfen und ändert die Variable artikelbestand
+  * @param  bestand : Menge von Artikeln (muss groesser als 0 sein), die man vom aktuellen Bestand abbuchen moechte
+  * Die setArtikelbestand Methode wird aufgerufen, um den Artikelbestand zu ueberpruefen und aendert die Variable artikelbestand
   */
 
   public void abgang(int bestand)
@@ -85,10 +85,10 @@ public class Artikel
   * Methode um den Preis zu aendern
   *
   * @param  prozentsatz : um den Preis zu aendern
-  * Die setArtikelpreis Methode wird aufgerufen, um den Artikelpreis zu überprüfen und ändert die Variable artikelpreis
+  * Die setArtikelpreis Methode wird aufgerufen, um den Artikelpreis zu ueberpruefen und aendert die Variable artikelpreis
   */
   public void aenderePreis(double prozentsatz) { // prozentsatz kann positiv sowie negativ sein
-    setArtikelpreis(artikelpreis + artikelpreis * prozentsatz / 100.0); // Die setMethode ueberprueft, dass der Preis groeßer als null ist
+    setArtikelpreis(artikelpreis + artikelpreis * prozentsatz / 100.0); // Die setMethode ueberprueft, dass der Preis groesser als null ist
   }
 
   //------------------Artikelnummer-------------------------------

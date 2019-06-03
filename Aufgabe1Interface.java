@@ -8,5 +8,5 @@ package aufgabe1;
 
 public interface Aufgabe1Interface
 {
-    public double apply (double x);
+    public double iterate (double x);
 }
