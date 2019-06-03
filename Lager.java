@@ -210,6 +210,14 @@ public class Lager {
     return lager.length;
   }
 
+  
+  /**
+  * Gibt Artikel als sortierte Liste zurück. Benutzt die sort() Methode um of die Liste zu iterieren.
+  * Die Methode ist so implementiert,dass das Sortierkriterium als Parameter an die Methode uebergeben wird.
+  *
+  * @param BiPredicate<Artikel, Artikel> Sortierkriterium
+  * @return Artikel[] sortierte Liste
+  */
 
   private Artikel[] getSorted(BiPredicate<Artikel, Artikel> sortierKriterium){
     Artikel[] clonedLager = lager.clone();
@@ -217,6 +225,13 @@ public class Lager {
     return clonedLager;
   }
 
+  /**
+  * Iteriert ueber ein gegebenes Array, und sortiert diesen mithilfe des Sortierkriteriums
+  *
+  * @param BiPredicate<Artikel, Artikel> Sortierkriterium
+  * @param Artikel[] Array
+  */
+  
   private void sort(BiPredicate<Artikel, Artikel> sortKriterium, Artikel[] artikelArray) {
     for (int i = 0; i < artikelArray.length; i++) {
       for (int j = 1; j < artikelArray.length - i; j++) {
@@ -228,6 +243,13 @@ public class Lager {
       }
     }
   }
+  
+  /**
+  * Gibt die Artikel des Lagers zurück welche ein bestimmtes Filterkriterium erfuellen.
+  *
+  * @param Predicate<Artikel> Filterkriterium
+  * @return ArrayList<Artikel> Arrayliste mit den gefilterten Artikel
+  */
 
   private ArrayList<Artikel> filter(Predicate<Artikel> filterFunction){
     ArrayList<Artikel> filteredArray = new ArrayList<Artikel>();
@@ -249,12 +271,25 @@ public class Lager {
     lager.legeArtikelAn(trikot);
     System.out.println(lager.filter((Artikel x) -> x.getArtikelbestand() > 8 ));
   }*/
+  
+  /**
+  * Wendet die uebergegebene Operation auf alle Artikel des Lagers.
+  *
+  * @param Consumer<Artikel> Operation die durchgefuehrt werden soll
+  */
 
   private void applyToArticles(Consumer<Artikel> operation){
     for(int i = 0; i < anzArtikel; i++){
       operation.accept(lager[i]);
     }
   }
+  
+  /**
+  * Wendet die uebergegebene Operation auf alle Artikel des Lagers die dem Filterkriterium entsprechen aus.
+  *
+  * @param Consumer<Artikel> Operation die durchgefuehrt werden soll
+  * @param Predicate<Artikel> Filterkriterium 
+  */
 
   public void applyToSomeArticles(Consumer<Artikel> operation, Predicate<Artikel> filterFunction) {
     for (int i = 0; i < anzArtikel; i++) {
@@ -277,6 +312,15 @@ public class Lager {
       System.out.println(ball.toString());
       System.out.println(schienbeinschoner.toString()) ;
   }*/
+  
+  /**
+  * Gibt eine sortierte Liste der Artikel zurück, welche ein bestimmtes Suchkriterium erfüllen.
+  *
+  * @param BiPredicate<Artikel, Artikel> Sortierkriterium
+  * @param Predicate<Artikel> Filterkriterium 
+  *
+  * @return Artikel[] gefiltertes und sortiertes Array
+  */
 
   private Artikel[] getArticles(BiPredicate<Artikel, Artikel> sortKriterium, Predicate<Artikel> filterKriterium){
     ArrayList<Artikel> list = new ArrayList<Artikel>(filter(filterKriterium));
@@ -284,6 +328,15 @@ public class Lager {
     sort(sortKriterium, list.toArray(array));
     return array;
   }
+  
+  /**
+  * Nimmt eine beliebige Menge an Filterkriterien als Parameter entgegen 
+  * und gibt die Artikel des Lagers zurück die alle Filterkriterien erfüllen
+  *
+  * @param Predicate<Artikel>... beliebig viele Sortierkriterien.
+  *
+  * @return Artikel[] gefiltertes und sortiertes Array
+  */
 
   private void filterAll(Predicate<Artikel>... filterCriterias){
     ArrayList<Artikel> filteredArray = new ArrayList<Artikel>(Arrays.asList(lager));
