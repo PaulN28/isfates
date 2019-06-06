@@ -1,0 +1,94 @@
+
+
+
+    #######################################################################
+    Dipl.-Ing. Wolfgang Pauly / Dipl.-Inform. Achim Pick            SS 2019
+    #######################################################################
+    
+    
+    04. Uebung zur Vorlesung :  PI/DFHI - Rechnernetze             (PIB-RN)
+    =======================================================================
+    
+    Abgabe: Zur Vorlesung in der KW 23 
+
+    Form  : - in schriftlicher Form, anzugeben sind die zur Loesung der
+              Aufgaben notwendigen LINUX-Kommandos bzw. LINUX-Kommandofolgen,
+              deren Ausgaben - natuerlich nur auszugsweise !!! -  und 
+              natuerlich die Antworten auf die einzelnen Fragen.
+
+    Quelle : ~pauly/RECHNERNETZE-PIB-DFHI-Praktikum-ss2019/ueb04/ueb04.txt
+
+    
+
+    1. Aufgabe - Netzwerkschnittstellen eines Rechners
+    --------------------------------------------------
+    - mit welchen Linux- bzw Windowskommandos kann man sich die 
+      Netzwerkschnittstellenkonfiguration eines Rechners anschauen ??
+      (lesen Sie die Manualpages unter Redhat/CentOS/XUbuntu/Win10 !!!)
+
+	Windows:	$>ipconfig
+	Linux: 		$>ifconfig
+
+    - Fuehren Sie das entsprechende Kommando unter den Betriebssystemen  
+      Redhat/CentOs/Win10 auf einer virtuellen Maschine
+      im STL aus und speichern Sie die Ausgaben in einer Textdatei ab. 	DONE
+
+    - Fuehren Sie das entsprechende Kommando auch auf einer Arbeitsstation in Ihrem 
+      HOME-Netzwerk fuer folgende Situationen aus: 
+                <> an ihrem HOME-LAN u./o. WLAN
+      speichern Sie auch diese Ausgaben in einer Textdatei ab. 			DONE (WLAN)
+
+    - Beispiel-Daten fuer die unten aufgefuehrten Netze finden Sie im Uebungs-Directory
+      im Ordner : HTW-WLAN-Daten
+
+                <> oeffentliches LAN der HTW (Gelbe Dosen)    
+                <> oeffentliches WLAN der HTW  (Eduroam)      
+                <> oeffentliches WLAN htwintern               
+                <> oeffentliches WLAN hiz-saarland            
+                <> oeffentliches WLAN hiz-saarland + HTWDS-VPN
+                <> oeffentliches WLAN hiz-saarland + STL-VPN  
+                <> ein HOME-LAN u./o. WLAN + STL-VPN u./o. HTWDS-VPN
+
+
+
+    2. Aufgabe - Merkmale der IP-Netzwerke an der HTW
+    -------------------------------------------------
+    - Erzeugen Sie eine Tabelle fuer die in Aufgabe 1 selbst gesammelten Daten und 
+      den Daten aus dem Ordner : HTW-LAN-Daten. 
+
+      Pro Netzwerk eine Tabellenzeile, wobei in jeder Zeile folgende Spalten
+      auszufuellen sind :
+                  <> Name des Netzwerkes + Betriebssystem
+                  <> Netzwerk-Adresse
+                  <> Netzwerkmaske
+                  <> Default-Router-Adresse
+                  <> Broadcast-Adresse 
+                  <> Host-Adressbereich
+                  <> Maximale Anzahl der Hostadressen
+				  
+Netzwerk Name + OS  | Netzwerk-Adresse  | Netzwerkmaske     | Default-Adresse	| Broadcast-Adresse	| Host-Adressbereich					| Max Hostadressen  |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+ST  Win7	|	172.16.0.5   	|	255.255.255.0	|	172.16.0.0		|	172.16.0.255	|	172.16.0.1 bis 172.16.0.254			| 	     256	    | Pas sûr
+----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+			Win		|	10.9.40.195 	|	255.255.248.0	|	10.9.40.0		|	10.9.40.255		|	10.9.40.1 bis 10.9.40.254			|	  131072		|
+----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+STL 	Win		|	172.16.24.45	|	255.255.255.0	|	172.16.24.0  	|	172.16.24.255	|	172.16.24.1 bis 172.16.24.254		|	     256		| Pas sûr
+----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+					|					|					|					|					|										|					|
+----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+					|					|					|					|					|										|					|
+----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+					|					|					|					|					|										|					|
+----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+					|					|					|					|					|										|					|
+----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    TIPP: der Default-Router besitzt an der HTW immer die erste moegliche Host-Nummer
+
+    Was faellt Ihnen in der Tabelle auf?, 
+        fassen Sie die Ergebnisse Ihrer Experimente zusammen.
+
+    Welche sonstigen Besonderheiten/Unterschiede fallen Ihnen beim Vergleich der
+        Kommandoausgaben in Bezug 
+                                 - auf das laufende Betriebssystem
+                                 - auf die ausgegebenen Informationen
+       auf ??
