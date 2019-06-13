@@ -1,0 +1,290 @@
+
+
+
+    #######################################################################
+    Dipl.-Ing. Wolfgang Pauly / Dipl.-Inform. Achim Pick            SS 2019
+    #######################################################################
+    
+    
+    06. Uebung zur Vorlesung :  PI/DFHI - Rechnernetze             (PIB-RN)
+    =======================================================================
+    
+    Abgabe: Zur Vorlesung in der KW 24 
+
+    Form  : - in schriftlicher Form, anzugeben sind die zur Loesung der
+              Aufgaben notwendigen LINUX-Kommandos bzw. LINUX-Kommandofolgen,
+              deren Ausgaben - natuerlich nur auszugsweise !!! -  und 
+              natuerlich die Antworten auf die einzelnen Fragen.
+
+    Quelle : ~pauly/RECHNERNETZE-PIB-DFHI-Praktikum-ss2019/ueb06/ueb06.txt
+    
+    
+    1. Aufgabe - Die Routingtabelle eines Hosts = f(Betriebssystem & LAN)
+    ---------------------------------------------------------------------
+      - mit welchen Linux- bzw Windowskommandos kann man sich die 
+        Routingtabelle eines Rechners anschauen ??
+        (lesen Sie die Man-Pages unter Redhat/CentOS/XUbuntu/Win10 !!!)
+
+	Windows10: $>route PRINT
+	XUbuntu: $>route -vn
+	CentOS: $>route -vn
+
+
+      - Fuehren Sie das entsprechende Kommando unter 
+               <> CentOS (stl-s-stud.htwsaar.de)
+        und den Betriebssystemen
+               <> Redhat/CentOS
+               <> Win10
+        auf einer virtuellen Maschine in den STL-Raeumen aus; speichern Sie 
+        die Ausgaben in einer Textdatei ab.
+
+      - Fuehren Sie das entsprechende Kommando auch auf einer Arbeitsstation die
+               <> an ihrem HOME-LAN u.o. WLAN
+        angeschlossen ist, aus und speichern Sie auch diese Ausgaben in einer Textdatei ab.
+
+      - Beispieldaten fuer folgende HTW-Netze 
+               <> STL-LAN Betriebssystem Solaris
+               <> HTW-LAN (gelbe Dosen)
+               <> HTW-WLAN (Eduroam)  
+               <> HTW-WLAN (hiz-saarland)
+               <> HTW-WLAN (htwintern) 
+        finden Sie im Uebungsdirectory im Ordner HTW-WLAN-Daten.
+
+
+      - Erstellen Sie je eine Tabelle in dem unten angegebenen Format fuer folgende 
+                      ^^^^^^^^^^^^^^^
+        Routingtabelleneintraege :
+
+                      - Defaultrouten
+                      - Routen ins Heimat-IP-Netzwerk des Hosts
+                      - Routen ins Host-interne IP-Netzwerk
+                      - Routen in andere Netzwerke
+                                         
+
+        Beispielaufbau der 1. Tabelle
+        -----------------------------------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+                                            Defaultrouten
+        -----------------------------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           Betriebssystem  | Standort     | Name / IP-Adresse | Router       | Interface
+        --------------------------------------------------------------------------
+           Solaris         | STL          |     ???           |     ?        |   ?
+        --------------------------------------------------------------------------
+           CentOS          | STL          |      0.0.0.0      | 134.96.216.1 | 127.0.0.1
+           stl-s-stud      | STL          |                   |              |
+        --------------------------------------------------------------------------
+           Redhat/CentOS   | STL          |      0.0.0.0      | 134.96.216.1 | 134.96.216.113
+           VM              |              |                   |              |
+        --------------------------------------------------------------------------
+           Win10           | STL          |      0.0.0.0      | 134.96.216.1 | 134.96.216.115
+           VM              |              |                   |              |
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | gelbe Dosen  |      0.0.0.0      |  172.16.0.1  | 172.16.0.18
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | eduroam      |      0.0.0.0      |   10.9.4.1   | 10.9.5.174
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | hiz-saarland |      0.0.0.0      |   10.9.0.1   | 10.9.0.128
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | htwintern    |      0.0.0.0      | 172.16.16.1  | 172.16.18.121
+        --------------------------------------------------------------------------
+           Rechner- Win10  | HOME-WLAN    |      0.0.0.0      | 192.168.1.1  | 192.168.1.150
+        --------------------------------------------------------------------------
+
+
+	-----------------------------------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+                                            Routen ins Heimat-IP-Netzwerk des Hosts
+        -----------------------------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           Betriebssystem  | Standort     | Name / IP-Adresse | Router | Interface
+        --------------------------------------------------------------------------
+           Solaris         | STL          |         ???       |    ?   |     ?
+        --------------------------------------------------------------------------
+           CentOS          | STL          | 134.96.216.1      |0.0.0.0 | 134.96.216.226
+           stl-s-stud      | STL          |                   |        |
+        --------------------------------------------------------------------------
+           Redhat/CentOS   | STL          | 134.96.216.0      |0.0.0.0 | 134.96.216.
+           VM              |              |                   |        |
+        --------------------------------------------------------------------------
+           Win10           | STL          | 134.96.216.0      |Auf Ver.| 134.96.216.176
+           VM              |              | 134.96.216.176    |Auf Ver.| 134.96.216.176
+                           |              | 134.96.216.255    |Auf Ver.| 134.96.216.176
+                           |              | 255.255.255.255   |Auf Ver.| 134.96.216.176
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | gelbe Dosen  | 172.16.0.18       |Auf Ver.| 172.16.0.18
+		           |              | 172.16.0.255      |Auf Ver.| 172.16.0.18
+       			   |              | 172.16.0.0        |Auf Ver.| 172.16.0.18
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | eduroam      | 10.9.40.195       |Auf Ver.| 10.9.40.195
+			   |              | 10.9.47.255       |Auf Ver.| 10.9.40.195
+			   |              | 10.9.40.0         |Auf Ver.| 10.9.40.195
+			   |              | 10.9.40.1         |Auf Ver.| 10.9.40.195
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | hiz-saarland | 10.9.0.0          |Auf Ver.| 10.9.0.128
+			   |              | 10.9.0.128        |Auf Ver.| 10.9.0.128
+			   |              | 10.9.0.255        |Auf Ver.| 10.9.0.128
+			   |              | 255.255.255.255   |Auf Ver.| 10.9.0.128
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | htwintern    | 172.16.16.0       |Auf Ver.| 172.16.18.121
+			   |              | 172.16.18.121     |Auf Ver.| 172.16.18.121
+			   |              | 172.16.31.255     |Auf Ver.| 172.16.18.121
+			   |              | 255.255.255.255   |Auf Ver.| 172.16.18.121
+        --------------------------------------------------------------------------
+           Rechner- Win10  | HOME-WLAN    | 192.168.56.0      |Auf Ver.| 192.168.56.1
+			   |              | 192.168.56.1      |Auf Ver.| 192.168.56.1
+			   |              | 192.168.56.255    |Auf Ver.| 192.168.56.1
+			   |              | 255.255.255.255   |Auf Ver.| 192.168.56.1
+        --------------------------------------------------------------------------
+
+
+	-----------------------------------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+                                            Routen ins Host-interne IP-Netzwerk
+        -----------------------------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           Betriebssystem  | Standort     | Name / IP-Adresse | Router | Interface
+        --------------------------------------------------------------------------
+           Solaris         | STL          |     ???           |    ?   |  ?
+        --------------------------------------------------------------------------
+           CentOS          | STL          |    none           |  none  | none
+           stl-s-stud      | STL          |                   |        |
+        --------------------------------------------------------------------------
+           Redhat/CentOS   | STL          |    none           |  none  | none
+           VM              |              |                   |        |
+        --------------------------------------------------------------------------
+           Win10           | STL          | 127.0.0.0         |Auf Ver.| 127.0.0.1
+           VM              |              | 127.0.0.1         |Auf Ver.| 127.0.0.1
+                           |              | 127.255.255.255   |Auf Ver.| 127.0.0.1
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | gelbe Dosen  | 127.0.0.0         |Auf Ver.| 127.0.0.1
+			   |              | 127.0.0.1         |Auf Ver.| 127.0.0.1
+			   |              | 127.255.255.255   |Auf Ver.| 127.0.0.1
+			   |              | 255.255.255.255   |Auf Ver.| 127.0.0.1
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | eduroam      | 127.0.0.0         |Auf Ver.| 127.0.0.1
+			   |              | 127.0.0.1         |Auf Ver.| 127.0.0.1
+                      	   |              | 127.255.255.255   |Auf Ver.| 127.0.0.1
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | hiz-saarland | 127.0.0.0         |Auf Ver.| 127.0.0.1
+                           |              | 127.0.0.1         |Auf Ver.| 127.0.0.1
+			   |              | 127.255.255.255   |Auf Ver.| 127.0.0.1
+			   |              | 255.255.255.255   |Auf Ver.| 127.0.0.1
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | htwintern    | 127.0.0.0         |Auf Ver.| 127.0.0.1
+			   |              | 127.0.0.1         |Auf Ver.| 127.0.0.1
+			   |              | 127.255.255.255   |Auf Ver.| 127.0.0.1
+			   |              | 255.255.255.255   |Auf Ver.| 127.0.0.1
+        --------------------------------------------------------------------------
+           Rechner- Win10  | HOME-WLAN    | 127.0.0.0         |Auf Ver.| 127.0.0.1
+			   |              | 127.0.0.1         |Auf Ver.| 127.0.0.1
+			   |              | 127.255.255.255   |Auf Ver.| 127.0.0.1
+			   |              | 255.255.255.255   |Auf Ver.| 127.0.0.1
+        --------------------------------------------------------------------------
+
+
+	-----------------------------------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+                                            Routen in andere Netzwerke
+        -----------------------------------^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           Betriebssystem  | Standort     | Name / IP-Adresse | Router | Interface
+        --------------------------------------------------------------------------
+           Solaris         | STL          |                   |        |
+        --------------------------------------------------------------------------
+           CentOS          | STL          |  192.168.122.0    |0.0.0.0 | 192.168.122.1
+           stl-s-stud      | STL          |  169.254.0.0      |0.0.0.0 | 134.96.216.226
+        --------------------------------------------------------------------------
+           Redhat/CentOS   | STL          |  169.254.0.0      |0.0.0.0 | 134.96.216.71
+           VM              |              |  192.168.122.0    |0.0.0.0 | 192.168.122.1
+        --------------------------------------------------------------------------
+           Win10           | STL          | 224.0.0.0         |Auf Ver.| 127.0.0.1
+           VM              |              | 224.0.0.0         |Auf Ver.| 134.96.216.176
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | gelbe Dosen  | 224.0.0.0         |Auf Ver.| 127.0.0.1
+			   |              | 224.0.0.0         |Auf Ver.| 172.16.0.18
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | eduroam      | 224.0.0.0         |Auf Ver.| 127.0.0.1
+			   |              | 224.0.0.0         |Auf Ver.| 192.168.56.1
+                           |              | 224.0.0.0         |Auf Ver.| 10.9.5.174
+                           |              | 192.168.56.0      |Auf Ver.| 192.168.56.1
+                           |              | 192.168.56.1      |Auf Ver.| 192.168.56.1
+                           |              | 192.168.56.255    |Auf Ver.| 192.168.56.1 
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | hiz-saarland | 224.0.0.0         |Auf Ver.| 127.0.0.1
+			   |              | 224.0.0.0         |Auf Ver.| 192.168.56.1
+			   |              | 224.0.0.0         |Auf Ver.| 10.9.0.128
+			   |              | 192.168.56.0      |Auf Ver.| 192.168.56.1
+			   |              | 192.168.56.1      |Auf Ver.| 192.168.56.1
+			   |              | 192.168.56.255    |Auf Ver.| 192.168.56.1
+	                   |              | 255.255.255.255   |Auf Ver.| 192.168.56.1
+        --------------------------------------------------------------------------
+           Laptop - Win 7  | htwintern    | 192.168.56.0      |Auf Ver.| 192.168.56.1
+			   |              | 192.168.56.1      |Auf Ver.| 192.168.56.1
+			   |              | 192.168.56.255    |Auf Ver.| 192.168.56.1
+			   |              | 224.0.0.0         |Auf Ver.| 192.168.56.1
+			   |              | 255.255.255.255   |Auf Ver.| 192.168.56.1
+        --------------------------------------------------------------------------
+           Rechner- Win10  | HOME-WLAN    | 192.168.1.0       |Auf Ver.| 192.168.1.150
+			   |              | 192.168.1.150     |Auf Ver.| 192.168.1.150
+			   |              | 192.168.1.255     |Auf Ver.| 192.168.1.150
+			   |              | 255.255.255.255   |Auf Ver.| 192.168.1.150
+                  	   |              | 224.0.0.0         |Auf Ver.| 127.0.0.1
+                  	   |              | 224.0.0.0         |Auf Ver.| 192.168.56.1
+                  	   |              | 224.0.0.0         |Auf Ver.| 192.168.1.150
+        --------------------------------------------------------------------------
+
+        ????* == das HOME-Rechner-Betriebssystem
+
+      - Welche Routen tauchen bei den meisten Betriebssystemen auf ? und
+        welchen Zweck erfuellen sie ? 
+
+	Jedes Betriebssystem besitz eine Defaultroute (0.0.0.0), sie verbindet ein Netzwerk zu einem Router, der widerrum an andere Router angeschlossen ist (Internet).
+	Grob, die Defaultroute ermoeglicht eine Internet Verbindung.
+
+      - Welche Routen kommen nur bei einem Betriebssystem vor ? und 
+        welchen Zweck erfuellen diese Zusatzrouten ?
+
+	CentOS hat eine virtuelles Interface (virbr0). Dieses Interface kann bei Virtuellen Maschinen benutzt werden. 
+
+	Windows hat eine Route zum IP-Netzwerk "224.0.0.0", dieses IP-Netzwerkroute ist eine Multicastroute. 
+	Die Gruppe beinhaltet die Adressen von 224.0.0.0.0.0 bis 239.255.255.255.255.255. 
+	Adressvergaben aus diesem Bereich sind in RFC 5771, einem Best Current Practice Dokument (BCP 51) der Internet Engineering Task Force (IETF), spezifiziert.
+     
+      - Welche Routen kommen bei den einzelnen Betriebssystem nicht vor ? und 
+        was bedeutet das ?
+	
+	CentOS hat keine Route zu einem Host-internen IP-Netzwerk sowie keine Rute zum IP-Netzwerk "224.0.0.0".
+	Man erkennt auch das CentOS keine Route zu Netzwerk / Broadcast Adressen anzeigt (warum ? fehlender Schalter ?).
+
+
+      - Die Rechner sind je nachdem ob sie am STL-LAN oder an den HTW-LAN/WLAN's oder 
+        am HOME-LAN/WLAN angeschlossen sind in verschiedenen (Heimat)-IP-Netzwerken aktiv.
+        Geben Sie fuer diese IP-Netzwerke jeweils die Netzwerk-Adresse, die Netzwerk-Maske,
+	die Broadcast-Adresse sowie die Anzahl der moeglichen HOST-IP's an.
+
+	Home WLAN:
+		Netzwerk-Adresse: 192.168.56.0
+		Netzwerk-Maske: 255.255.255.0
+		Broadcast-Adresse: 192.168.56.255
+		Maximale Anzahl an Hosts: 254
+
+	Eduroam:
+		Netzwerk-Adresse: 10.9.40.0
+		Netzwerk-Maske: 255.255.248.0
+		Broadcast-Adresse: 10.9.47.255
+		Maximale Anzahl an Hosts: 2045	
+
+	htwintern:
+		Netzwerk-Adresse: 172.16.16.0
+		Netzwerk-Maske: 255.255.240.0
+		Broadcast-Adresse: 172.16.31.255
+		Maximale Anzahl an Hosts: 4096 
+
+	hiz-saarland:
+		Netzwerk-Adresse: 192.168.178.0
+		Netzwerk-Maske: 255.255.255.0
+		Broadcast-Adresse: 254
+		Maximale Anzahl an Hosts: 192.168.178.255
+
+	Gelbe Dosen:
+		Netzwerk-Adresse: 172.16.0.0
+		Netzwerk-Maske: 255.255.255.0
+		Broadcast-Adresse: 172.16.0.255
+		Maximale Anzahl an Hosts: 254
+
+PS: Wir haben es nicht geschafft einen Solaris Terminal via Linux herzustellen (deshalb haben wir fuer Solaris keine Daten). 
+    Koennten Sie das ganze waehrend einer Vorlesung kurz erlaeutern ?
+  
