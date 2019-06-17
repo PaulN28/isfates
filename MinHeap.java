@@ -1,183 +1,261 @@
 import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Queue;
 
-public class MinHeap<E extends Comparable> implements java.util.Queue<E>{
+/**
+ * Implementierung eines MinHeaps mithilfe des Queues Interface
+ * @author NICOLAS Paul & GAMLIN Nils
+ * @date 15/06/2019
+ * @param <E> Objekt das die Klasse Comparable extends
+ */
 
-    private E[] heap;
+public class MinHeap<E extends Comparable<E>> implements Queue<E> {
+
+    private E[] minHeap;
     private int currentSize;
+
+    private static MinHeap<Integer> minHeapTest;
 
     /**
      * Konstruktor der Klasse MinHeap.
      * @param klasse Typ der Elemente die in den Array gespeichert werden sollen.
-     * @param arraySize Groesse des Arrays
+     * @param size Groesse des Arrays
      */
 
-    public MinHeap(Class<E> klasse, int arraySize){
-        heap = (E[]) Array.newInstance(klasse, arraySize);
+    public MinHeap(Class<E> klasse, int size) {
+        minHeap = (E[]) Array.newInstance(klasse, size);
         currentSize = 0;
     }
 
     /**
-     * Fügt das angegebene Element in den Queue ein, wenn dies ohne Verletzung der Kapazitätsbeschränkungen sofort möglich ist.
-     * @param element das einzufügene Element.
+     * Fuegt das angegebene Element in den Queue ein, wenn dies ohne Verletzung der Kapazitaetsbeschrankungen sofort moeglich ist.
+     * @param e das einzufuegene Element.
      * @return boolean
      */
-    public boolean offer(E element){
-        if(currentSize <= heap.length){
-            int currentIndex = currentSize + 1;
-            heap[currentSize] = element;
-            currentSize ++;
 
-            int indexParent = getParent(currentIndex);
-            while((heap[currentIndex]).compareTo(heap[indexParent]) < 0){
-                swap(currentIndex, indexParent);
-                currentIndex = indexParent;
+    @Override
+    public boolean offer(E e) {
+        boolean offer = false;
+        if (!(currentSize + 1 > minHeap.length)) {
+            minHeap[currentSize] = e;
+            currentSize++;
+            int current_node = currentSize - 1;
+            while (true) {
+                int parent_node = parent(current_node);
+
+                if (minHeap[current_node].compareTo(minHeap[parent_node]) < 0) {
+                    swap(current_node, parent_node);
+                    current_node = parent_node;
+                    offer = true;
+                }
+                else
+                {
+                    break;
+                }
             }
-            return true;
         }
-        return false;
+        return offer;
     }
 
     /**
+     * Vertauscht 2 Elemente
+     * @param current_node
+     * @param parent_node
+     */
+    public void swap(int current_node, int parent_node) {
+        E swap_value = minHeap[current_node];
+        minHeap[current_node] = minHeap[parent_node];
+        minHeap[parent_node] = swap_value;
+    }
+
+
+    /**
      * Ruft den Head des Queues ab und entfernt ihn.
-     * Gibt null zurück, wenn der Queue leer ist.
+     * Gibt null zurueck, wenn der Queue leer ist.
      * @return E
      */
 
-    public E poll(){
-        if (currentSize != 0) {
-            E firstElement = heap[0];
-            heap[0] = null;
-            swap(0, currentSize - 1);
+    @Override
+    public E poll() {
 
-            int acc = 0;
-            int biggestVal = 0;
-            while(acc < currentSize){
-                if(heap[getRightChild(acc)].compareTo(heap[getLeftChild(acc)]) < 0){
-                    biggestVal = getRightChild(currentSize);
-                }
+        E first_element = peek();
+        minHeap[0] = null;
+        swap(0, currentSize - 1);
+        currentSize--;
 
-                if(heap[biggestVal].compareTo(heap[acc]) < 0){
-                    swap(biggestVal, acc);
-                    acc = biggestVal;
-                }
+        int current_position = 0;
+        while (right_node(current_position) < currentSize) {
 
+            int left = left_node(current_position);
+            int right = right_node(current_position);
+            int current_node = left;
+
+            if (minHeap[right].compareTo(minHeap[left]) < 0) {
+                current_node = right;
             }
-
-            return firstElement;
+            if (minHeap[current_node].compareTo(minHeap[current_position]) < 0) {
+                swap(current_node, current_position);
+                current_position = current_node;
+            }
+            else {
+                break;
+            }
         }
-        return null;
+        return first_element;
     }
 
     /**
      * Ruft den Head des Queues ab, entfernt ihn aber nicht.
-     * Gibt Null zurück, wenn diese Warteschlange leer ist.
+     * Gibt Null zurueck, wenn diese Warteschlange leer ist.
      * @return E
      */
 
-    public E peek(){
-        if(currentSize > 0){
-            return heap[0];
+    @Override
+    public E peek() {
+        return minHeap[0];
+    }
+
+    /**
+     * Gibt den Index des parents zurueck
+     * @param current_position
+     * @return Index des parents
+     */
+
+    private int parent(int current_position)
+    {
+        return (current_position - 1) / 2;
+    }
+
+    /**
+     * Gibt den Index des left nodes zurueck
+     * @param current_position
+     * @return Index des left nodes
+     */
+
+    private int left_node(int current_position)
+    {
+        return 2 * current_position + 1;
+    }
+
+    /**
+     *  Gibt den Index des right nodes zurueck
+     * @param current_position
+     * @return Index des right nodes
+     */
+
+    private int right_node(int current_position)
+    {
+        return 2 * current_position + 2;
+    }
+
+    /**
+     * ToString Methode
+     * @return String
+     */
+
+    public String toString() {
+        String result = "";
+        for (int i = 0; i < currentSize; i++) {
+            result += minHeap[i] + " ";
         }
-        return null;
-    }
-
-    private int getParent(int index){
-        return index / 2;
-    }
-
-    private int getLeftChild(int index){
-        return 2 * index;
-    }
-
-    private int getRightChild(int index){
-        return (2 * index) + 1;
-    }
-
-    private void swap(int i, int j){
-        E aux = heap[i];
-        heap[i] = heap[j];
-        heap[j] = aux;
+        return result;
     }
 
     //-------------- Nicht implementierte Methoden --------------
 
-    public boolean add(E e){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
-    }
 
-    public E remove(){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
-    }
-
-    public E element(){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
-    }
-
-    public int size(){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
-    }
-
-    public int hashCode(){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    @Override
+    public boolean add(E e) {
+        throw new UnsupportedOperationException();
     }
 
     @Override
-    public boolean equals(Object o) {
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
-    }
-
-    public void clear(){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    public E remove() {
+        throw new UnsupportedOperationException();
     }
 
     @Override
-    public boolean retainAll(Collection<?> c) {
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    public E element() {
+        throw new UnsupportedOperationException();
     }
 
     @Override
-    public boolean removeAll(Collection<?> c) {
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    public int size() {
+        throw new UnsupportedOperationException();
     }
 
-    public boolean addAll(Collection<? extends E> c) {
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    @Override
+    public boolean isEmpty() {
+        throw new UnsupportedOperationException();
     }
 
-    public boolean containsAll(Collection<?> c) {
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    @Override
+    public boolean contains(Object o) {
+        throw new UnsupportedOperationException();
     }
 
+    @Override
+    public Iterator iterator() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public E[] toArray() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public E[] toArray(Object[] a) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public boolean remove(Object o) {
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+        throw new UnsupportedOperationException();
     }
 
-    public boolean isEmpty(){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    @Override
+    public boolean containsAll(Collection c) {
+        throw new UnsupportedOperationException();
     }
 
-    public <T> T[] toArray(T[] a){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    @Override
+    public boolean addAll(Collection c) {
+        throw new UnsupportedOperationException();
     }
 
-    public Object[] toArray(){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    @Override
+    public boolean removeAll(Collection c) {
+        throw new UnsupportedOperationException();
     }
 
-    public Iterator<E> iterator(){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    @Override
+    public boolean retainAll(Collection c) {
+        throw new UnsupportedOperationException();
     }
 
-    public boolean contains(Object o){
-        throw new java.lang.UnsupportedOperationException("Nicht implementierte Methode !");
+    @Override
+    public void clear() {
+        throw new UnsupportedOperationException();
     }
 
+    /**
+     * Test-Methode
+     * @param args
+     */
 
-    //-------------- Test --------------
-    public static void main(String[] args){
-        System.out.println(Integer.class);
+    public static void main(String[] args) {
+        minHeapTest = new MinHeap<Integer>(Integer.class, 20);
+        minHeapTest.offer(2);
+        minHeapTest.offer(4);
+        minHeapTest.offer(3);
+        minHeapTest.offer(1);
+        minHeapTest.offer(6);
+        System.out.println(minHeapTest.toString());
+        System.out.println(minHeapTest.peek());
+        minHeapTest.poll();
+        System.out.println(minHeapTest.toString());
     }
-
 }
+
