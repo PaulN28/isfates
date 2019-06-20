@@ -1,0 +1,112 @@
+
+
+
+    #######################################################################
+    Dipl.-Ing. Wolfgang Pauly / Dipl.-Inform. Achim Pick            ss 2019
+    #######################################################################
+    
+    
+    07. Uebung zur Vorlesung :  PI/DFHI - Rechnernetze             (PIB-RN)
+    =======================================================================
+    
+    Abgabe: Zur Vorlesung in der KW 25 
+
+    Form  : - in schriftlicher Form, anzugeben sind die zur Loesung der
+              Aufgaben notwendigen LINUX-Kommandos bzw. LINUX-Kommandofolgen,
+              deren Ausgaben - natuerlich nur auszugsweise !!! -  und 
+              natuerlich die Antworten auf die einzelnen Fragen.
+
+    Quelle : ~pauly/RECHNERNETZE-PIB-DFHI-Praktikum-ss2019/ueb07/ueb07.txt
+
+
+
+
+    1. Aufgabe - Bedeutung der Routingtabelle eines Host im STL-Netzwerk
+    --------------------------------------------------------------------
+
+      - Erlaeutern Sie anhand der einzelnen Routingtabelleneintraege einer VM
+        unter CentOS im STL welche Routingentscheidungen der Host selbst treffen kann. 
+
+                 <> Beschreiben Sie den jeweiligen Entscheidungsalgorithmus.
+                 <> geben Sie fuer jede Routingentscheidung ein Beispielszenario an
+		
+		ngamlin@stl-s-stud-neu:/export/home_17/ngamlin> netstat -rn
+		Kernel IP routing table
+		Destination     Gateway         Genmask         Flags   Mss Window  irtt Iface
+		0.0.0.0         134.96.216.1    0.0.0.0         UG        0 0          0 eth0
+		134.96.216.0    0.0.0.0         255.255.255.0   U         0 0          0 eth0
+		169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 eth0
+		192.168.122.0   0.0.0.0         255.255.255.0   U         0 0          0 virbr0
+		
+		inet: 134.96.216.226
+		
+		------------- Zeile 1 -------------
+		
+		Wenn der Empfaenger nicht im selben Netzwerk, wie der Host liegt, dann schickt der Host die Packete dem Router.
+		Dieser leitet sie dann entweder dem Host weiter falls das Netz des Empfaengers mit dem Router verbunden ist, falls nicht leitet er das ganze dem default Router weiter.
+		Der Default Router leitet die Packete zum zustaendigen Router, der wiederrum leitet die Packete zum Empfaengerhost weiter.
+		
+		$>ping kidsexchange.net 
+		--- kidsexchange.net ping statistics ---
+		214 packets transmitted, 214 received, 0% packet loss, time 213302ms
+		rtt min/avg/max/mdev = 167.055/167.206/168.466/0.488 ms
+		
+		Die Empfaengerhost liegt nicht im gleichen Netzwerk wie der Sendehost (184.168.131.241), deshalb werden die Packete zum Router gesendet,
+		dort werden die naechsten Weiterleitungsentscheidungen getroffen.
+		
+		
+		------------- Zeile 2 -------------
+		
+		Wenn der Empfaenger innerhalb des IP-Adressraums 134.96.216.XXX steht, dann kann der Host die Packete gleich dem Empfaenger zusenden.
+		
+		$>ping 134.96.216.84
+		--- 134.96.216.84 ping statistics ---
+		30 packets transmitted, 30 received, 0% packet loss, time 29039ms
+		rtt min/avg/max/mdev = 0.945/1.122/1.425/0.158 ms		
+		
+		Der Rechner mit der IP-Adresse 134.96.216.84 (gluecklicherweise an), steht im selben Netzwerk wie der Senderechner. 
+		Der Senderechner (134.96.216.226) hat selbst herausgefunden das der Empfaenger im selben Netzwerk steht und hat die Packete gleich an dieser Adresse geschickt.
+		
+		
+		------------- Zeile 3 -------------
+		
+		Wenn ein Host eine Adresse nicht dynamisch erfassen kann, 
+		kann er optional eine link-lokale IPv4-Adresse gemaess RFC 3927 zuweisen.
+		Microsofts Begriff dafuer ist Automatic Private Internet Protocol Addressing (APIPA). (thx internet)
+		
+		
+		------------- Zeile 4 -------------
+		
+		Diese Route wird benutzt um mit VMs zu kommunizieren. 
+		
+		
+	
+      - Ueber welche Routen kann der Host direkt, d.h. auf Ebene 2 des OSI 7-Schichten
+        Modelles mit seinem END-Kommunikationspartner kommunizieren?
+		
+		-  134.96.216.0
+		-  169.254.0.0
+		-  192.168.122.0
+
+      - Ueber welche Routen kann er nur eine erste Teilstrecke zum Kommunikationspartner
+        ueberwinden ?, wer und wie werden dann die weiteren Routingentscheidungen getroffen.
+		
+		- 0.0.0.0
+		
+		Falls der Router mit dem Netzwerk verbunden ist auf dem der Empfaengerhost liegt, dann leitet der Router die Packete gleich zum Empfaengerhost weiter.
+		Falls nicht leitet er das ganze dem default Router weiter. 
+		Der Default Router leitet die Packete zum zustaendigen Router, der wiederrum leitet die Packete zum Empfaengerhost weiter.
+                  
+      - Welche Unterschiede existieren zwischen der CentOS-Routingtabelle und der Solaris-10-
+        Routingtabelle, die Sie unter dem Solaris-daten-Diretory im Uebungsdirectory finden ?
+		
+		Es gibt andere Interfaces (z.B. kein virbr0, aber ein lo).
+		
+		localhost: ist ein per Internetstandard definierter Domainname der virtuellen IP-Adresse eines auf dem 
+		momentan genutzten eigenen Rechner laufenden Servers.
+		
+		BASE-ADDREss.MCAST.NET:
+		
+		Eine Multicast-Adresse ist ermoeglicht es eine Gruppe von Hosts in einem Netzwerk anzusprechen. 
+		Diese Hosts stehen zur Verarbeitung von Datagrammen oder Frames zur Verfuegung, die fuer einen bestimmten Netzwerkdienst als Multicast bestimmt sind. 
+		
