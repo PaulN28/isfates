@@ -244,7 +244,6 @@ public class Lager {
      * verwendet implizit die toString-Methode von Artikel
      *
      * @return  Zeichenkette
-     *
      */
     public String toString(){
         String s = "\nLager: " + getName() + '\n' +
