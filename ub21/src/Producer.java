@@ -5,7 +5,7 @@ public class Producer {
     private Random ran;
     
     /**
-    * Erzeugt einen zufaelligen Integer zwischen 0 und 1000. Und gibt diesen zurück.
+    * Erzeugt einen zufaelligen Integer zwischen 0 und 1000. Und gibt diesen zurueck.
     *
     * @param int produzierte Zahl.
 
