@@ -30,8 +30,8 @@ public class Lager {
     /**
      * Konstruktor fuer Objekte der Klasse Lager
      *
-     * @param name Name des Lagers
-     * @param maxAnzArtikel  maximale Anzahl an anzulegenden Artikeln
+     * @param String name Name des Lagers
+     * @param int maxAnzArtikel  maximale Anzahl an anzulegenden Artikeln
      */
 
     public Lager(String name, int maxAnzArtikel) {
@@ -64,7 +64,7 @@ public class Lager {
      * Artikelnummer bereits vergeben wurde und ob das
      * Lager bereits voll ist.
      *
-     * @param  artikel  ein Objekt der Klasse Artikel
+     * @param Artikel artikel ein Objekt der Klasse Artikel
      */
     public void legeArtikelAn(Artikel artikel) {
         check(!lager.containsKey(artikel.getArtikelnummer()), "Artikel bereits vorhanden!");
@@ -77,7 +77,7 @@ public class Lager {
     /**
      * Artikel loeschen, wenn die Artikelnummer nicht existiert wird eine Fehlermeldung geworfen
      *
-     * @param  artikelnummer zu uebergebende Artikelnummer
+     * @param int artikelnummer zu uebergebende Artikelnummer
      *
      */
     public void loescheArtikel(int artikelnummer) {
@@ -87,8 +87,8 @@ public class Lager {
     /**
      * Zugang von Artikeln
      *
-     * @param  artikelnummer   zu uebergebende Artikelnummer
-     * @param  bestand einzuzahlender Bestand (> 0)
+     * @param int artikelnummer   zu uebergebende Artikelnummer
+     * @param int bestand einzuzahlender Bestand (> 0)
      */
     public void zugang(int artikelnummer, int bestand) {
         check(lager.containsKey(artikelnummer), "Artikel nicht vorhanden!");
@@ -100,8 +100,8 @@ public class Lager {
     /**
      * Abgang von Artikeln
      *
-     * @param  artikelnummer   zu uebergebende Artikelnummer
-     * @param  bestand   abuzahlende Menge (> 0)
+     * @param int artikelnummer des Artikels zu uebergebende Artikelnummer
+     * @param int bestand   abuzahlende Menge (> 0)
      */
     public void abgang(int artikelnummer, int bestand) {
         check(lager.containsKey(artikelnummer), "Artikel nicht vorhanden!");
