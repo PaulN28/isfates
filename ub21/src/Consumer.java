@@ -18,7 +18,7 @@ public class Consumer {
 
     /**
     * Diese Methode nimmt einen Integer entgegen und berechnet die Quersumme.
-    * Für jede Berechnung wird außerdem der Zeitstempel der Berechnung gespeichert werden.
+    * Fuer jede Berechnung wird außerdem der Zeitstempel der Berechnung gespeichert werden.
     * Die Methode System.currentTimeMillis(), um den Zeitstempel zu erhalten.
     * 
     * @param int Nummer.
@@ -63,7 +63,7 @@ public class Consumer {
     }
     
     /**
-    * Gibt für einen gegebenen Integer an, wie häufig dieser als Ergebnis einer Berechnung vorkam
+    * Gibt fuer einen gegebenen Integer an, wie haeufig dieser als Ergebnis einer Berechnung vorkam
     *
     * @ param int n
     * @return int Anzahl an malle er ihn Berechnungen aufkam.
@@ -77,7 +77,7 @@ public class Consumer {
     }
     
     /**
-    * Gibt eine Collection zurück, welche die berechneten Quersummen in aufsteigender Reihenfolge enthält
+    * Gibt eine Collection zurueck, welche die berechneten Quersummen in aufsteigender Reihenfolge enthaelt
     *
     * @return Set<Integer> Collection mit den Quersummen in aufsteigender Form.
     */
@@ -87,7 +87,7 @@ public class Consumer {
     }
     
      /**
-    * Gibt eine Collection zurück, welche die berechneten Quersummen in absteigender Reihenfolge enthält.
+    * Gibt eine Collection zurueck, welche die berechneten Quersummen in absteigender Reihenfolge enthaelt.
     * 
     * @return NavigableSet<Integer> Collection mit den Quersummen in absteigender Form.
     */
@@ -97,9 +97,9 @@ public class Consumer {
     }
     
     /**
-    * nimmt einen Integer entgegen und gibt eine Collection zurück,
-    * welche alle zugehörigen Zeitstempel enthält. D.h. die Zeitstempel der Berechnungen, die
-    * zu dem gegebenen Ergebnis geführt haben.
+    * nimmt einen Integer entgegen und gibt eine Collection zurueck,
+    * welche alle zugehoerigen Zeitstempel enthaelt. D.h. die Zeitstempel der Berechnungen, die
+    * zu dem gegebenen Ergebnis gefuehrt haben.
     * 
     * @param int n
     * @return LinkedList<Long>
