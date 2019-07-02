@@ -119,9 +119,7 @@ public class Lager {
     }
 
     public void aenderePreisFuerAlleArtikel(double prozentsatz) {
-        for (Artikel artikel : lager.values()) {
-            artikel.aenderePreis(prozentsatz);
-        }
+        lager.values().stream().forEach( (Artikel a) -> a.aenderePreis(prozentsatz));
     }
 
     //------------------Interne Methode----------------------------------
