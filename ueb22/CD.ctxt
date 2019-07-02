@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=CD
+comment0.text=\ Klasse\ CD\ (Unterklasse\ von\ Artikel)\r\n\r\n\ @author\ NICOLAS\r\n\ @version\ 2019\r\n
+comment1.params=artikelnummer\ artikelbezeichnung\ artikelbestand\ artikelpreis\ interpret\ titel\ anzahlMusikTitel
+comment1.target=CD(int,\ java.lang.String,\ int,\ double,\ java.lang.String,\ java.lang.String,\ int)
+comment1.text=\r\n\ @param\ artikelnummer\ muss\ 4-stellig\ sein;\r\n\ @param\ artikelbezeichnung\ darf\ nicht\ leer\ sein;\r\n\ @param\ artikelbestand\ darf\ nie\ kleiner\ als\ 0\ sein.\r\n\ @param\ artikelpreis\ muss\ groesser\ als\ 0\ sein.\r\n\ @param\ interpret\ der\ CD\ darf\ nicht\ leer\ sein.\r\n\ @param\ titel\ der\ CD\ darf\ nicht\ leer\ sein.\r\n\ @param\ anzahlMusikTitel\ der\ CD\ muss\ groesser\ als\ 0.\r\n\ @return\ Ein\ Klassen-Objekt\ CD\r\n
+comment2.params=interpret
+comment2.target=void\ setInterpret(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ getInterpret()
+comment4.params=titel
+comment4.target=void\ setTitel(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ getTitel()
+comment6.params=anzahlMusikTitel
+comment6.target=void\ setAnzahlMusikTitel(int)
+comment7.params=
+comment7.target=int\ getAnzahlMusikTitel()
+comment8.params=
+comment8.target=java.lang.String\ getBeschreibung()
+comment8.text=\r\n\ @return\ gibt\ den\ Interpret\ und\ den\ Titel\ zurueck\r\n
+comment9.params=
+comment9.target=java.lang.String\ toString()
+comment9.text=\r\n\ Bereitet\ das\ CD-Objekt\ als\ Zeichenkette\ auf\r\n
+numComments=10
