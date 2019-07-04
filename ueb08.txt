@@ -1,0 +1,178 @@
+﻿
+
+
+    #######################################################################
+    Dipl.-Ing. Wolfgang Pauly / Dipl.-Inform. Achim Pick            SS 2019
+    #######################################################################
+    
+    
+    08. Uebung zur Vorlesung :  PI/DFHI - Rechnernetze             (PIB-RN)
+    =======================================================================
+    
+    Abgabe: Zur Vorlesung in der KW 27 
+
+    Form  : - in schriftlicher Form, anzugeben sind die zur Loesung der
+              Aufgaben notwendigen LINUX-Kommandos bzw. LINUX-Kommandofolgen,
+              deren Ausgaben - natuerlich nur auszugsweise !!! -  und 
+              natuerlich die Antworten auf die einzelnen Fragen.
+
+    Quelle : ~pauly/RECHNERNETZE-PIB-DFHI-Praktikum-ss2019/ueb08/ueb08.txt
+
+    
+    In dieser Uebung sollen Sie mit Hilfe des Programmes --> wireshark <-- und
+    mit Hilfe des UNIX/LINUX-Kommandos --> tcpdump <-- den Netzwerkverkehr einer VM
+    unter Redhat/CentOS oder XUbuntu belauschen/sniffen/snoopen. 
+
+    Im Gegensatz zu wireshark, das eine komfortable GUI - Benutzerschnittstelle besitzt, ist 
+    tcpdump ein auf allen Unix/Linux-Systemen verfuegbares komplexes Netzwerk-Analyseprogramm 
+    mit CLI-Schnittstelle und damit universeller einsetzbar. 
+
+    Deshalb lesen Sie die Manualpage von tcpdump und nutzen Sie die wireshark/tcpdump-Spickzettel
+    unter ~pauly/RECHNERNETZE-PI-DFHI-Vorlesung/Netz-Spickzettel
+
+    Weitere Informationsquellen :  Wikipedia-Artikel zu tcpdump und wireshark
+                                   die offiziellen Websites  : http://www.tcpdump.org
+                                                             : http://www.wireshark.org
+
+    Durch die verschiedenen Fragestellungen werden Sie ein Gefuehl fuer die Handhabung 
+    der Programme, deren Einsatzmoeglichkeiten zum Erkennen von Netzwerkproblemen kennenlernen
+    und Ihr Wissen ueber die in der Vorlesung besprochenen Protokolle vertiefen.
+    
+    Anmerkung : wenn im Folgenden von --> snooping oder snoopen <-- gesprochen wird, 
+                so ist die Benutzung der Programme --> wireshark und tcpdump <-- gemeint.
+                                                                 ^^^ 
+    
+    !!!!!  WICHTIG ---> geben Sie bei allen Aufgaben die von Ihnen genutzte tcpdump-Kommandozeile und 
+                        den von Ihnen genutzten Capture-Filter fuer wireshark an. 
+
+    
+    1. Aufgabe - ARP-snooping (nutzen sie Redhat/CentOS oder XUbuntu)
+    -----------------------------------------------------------------
+       - snoopen Sie eine erfolgreiche IP-Adressaufloesung; beschreiben Sie den Versuchsablauf
+         anhand der Kommando-Reihenfolge. Mit welchen Kommandos koennen Sie die Systemveränderungen 
+         nachweisen?
+
+	Terminal 1 == $1> 	Terminal 2 == $2> (unabhaengige Terminals)
+
+	tcpdump: $1>tcpdump -i eth0 arp host 134.96.216.226 
+		 $2>ping 134.96.216.226 -c 15
+	
+	wireshark: 1) bei wireshark den Filter arp eingeben.
+		   2) Aufzeichnung starten.
+		   3) $>ping stl-stud.htwsaar.de (oder einen anderen Host der nicht in der ARP Tabelle steht).
+		   4) Aufzeichnung stoppen.
+		
+    
+       - snoopen Sie die NICHT erfolgreiche IP-Addressaufloesung zum 
+         Rechner stl-rn-test.htwsaar.de : 134.96.216.238 
+
+
+	Terminal 1 == $1> 	Terminal 2 == $2> (unabhaengige Terminals)
+
+	tcpdump: $1>tcpdump -i eth0 arp host 134.96.216.238 
+		 $2>ping 134.96.216.238 -c 15
+	
+	wireshark: 1) bei wireshark den Filter arp eingeben.
+		   2) Aufzeichnung starten.
+		   3) $>ping 134.96.216.238 (oder einen anderen Host der nicht in der ARP Tabelle steht).
+		   4) Aufzeichnung stoppen.
+    
+              * Wieso wird eine IP-Adressaufloesung ueberhaupt angestossen ?
+		
+		ARP arbeitet zustandslos, es verarbeitet alle ankommenden ARP Nachrichten.
+		Auch wenn sie nicht für den Host (Target) bestimmt sind.
+
+    
+              * Wie oft und in welchen Zeitabstaenden probiert die ARP-Software
+                ihre Aufgabe zu erfuellen ?
+
+		jede Sekunde.
+    
+              * Auf welche Fehler oder Zustaende fuehren Sie das erhaltene Versuchsergebnis
+                zurueck ?
+
+		134.96.216.238 ist warscheinlich ein Host der eine Firewall besitz. 
+		Der Zweck ist den Host von aussen unerreichbar zu machen. 
+		Man muss vielleicht im gleichen Netz (wie der Hosts) sein um eine Antwort zu bekommen.
+		Es koennte aber auc sein das der Host nicht mit dem Internet verbunden ist (nicht an, etc...)   
+    
+
+
+    2. Aufgabe - ICMP-snooping 
+    -----------------------------------------------------
+       - snoopen Sie ein erfolgreiches --> ping hostname <--- Kommando
+
+	tcpdump: $1>tcpdump -i eth0 arp host 134.96.216.226 
+		 $2>ping 134.96.216.226 -c 15
+
+	wireshark: 1) bei wireshark den Filter icmp eingeben.
+		   2) Aufzeichnung starten.
+		   3) $>ping 134.96.216.238 -c 5.
+		   4) Aufzeichnung stoppen.
+	
+    
+              * Wie oft sendet ping standardmaessig ein ICMP-Echo-Request und 
+                in welchen Zeitabstaenden ? ( unter Redhat/CentOS, XUbuntu, Win10 )
+
+	CentOS: Es werden unendlich viele ICMP Requests gesendet. Jede Sekunde wird ein Request und ein Reply geschickt (bzw. Antwortet der Host sehr schnell nach dem request).
+	XUbuntu: Es werden unendlich viele ICMP Requests gesendet.Jede Sekunde wird ein Request und ein Reply geschickt (bzw. Antwortet der Host sehr schnell nach dem request).
+	Win10: Es werden standardmaessig 4 pakete versendet. Hier waren die Zeitabstaende nicht so linear wie unter Linux (zwischen 1 u. 3 Sekunden).
+    
+    
+       - snoopen Sie folgende ping-Kommandos so, dass sie die Roundtrip-Zeiten (RTT) des 
+         ping-Kommandos mit den Zeitabstaenden der gesendeten und empfangenen 
+         ICMP-Nachrichten, die Sie via tcpdump/wireshark erhalten haben, vergleichen koennen.
+                 --> ping -c 10 -s 40 stl-s-stud.htwsaar.de
+                 --> ping -c 10 -s 40 www.zeit.de
+
+	tcpdump: $>tcpdump -i eth0 icmp -ttt
+	wireshark: filter "icmp" einstellen
+
+    
+       - verfahren Sie ebenso mit folgenden ping-Kommandos
+                 --> ping -c 10 -s 40000 stl-s-stud.htwsaar.de
+                 --> ping -c 10 -s 40000 www.zeit.de
+
+	tcpdump: $>tcpdump -i eth0 icmp -ttt
+	wireshark: filter "icmp" einstellen
+
+
+    
+         Erklaeren Sie die verschiedenen Laufzeiten fuer die ICMP-Nachrichten. 
+         Denken Sie an die Anzahl und Groesse der IP-Datagramme etc.
+
+	Eine grossere Anzahl an gesendeten Bytes resultiert in mehr IP-Datagrammen die durch das Netzwerk gesendet werden müssen. 
+ 	Ausserdem liegt des stud Server in unmittelbarer naehe (Saarbruecken) waehrend der Server der Zeit hoechst wahrscheinlich anderswo in Deutschland liegt.
+     
+    
+    
+    
+    3. Aufgabe - Traceroute-snooping 
+    -----------------------------------------------------
+       - snoopen Sie das --> traceroute www-stl.htwsaar.de <--- Kommando
+         Denken Sie daran, dass Traceroute mit den Protokollen UDP und ICMP arbeitet.
+         Erlaeutern Sie anhand der Protokolle die Funktionsweise des 
+         traceroute-Programmes. 
+
+	tcpdump: $1>tcpdump -i eth0 icmp	$2>traceroute www-stl.htwsaar.de
+	wireshark: filter "icmp" einstellen (oder "UDP" ?)	$2>traceroute www-stl.htwsaar.de
+
+
+	Dieses Programm versucht, die Route zu verfolgen, die ein IP-Paket folgen wuerde um zu einem Internet-Host zu gelangen.
+	Es werden Sonderpakete mit einer kleinen TTL (Time To Live) gesendet und es wir dann auf eine ICMP-Antwort "time exceeded" Antwort von einem Gateway gewartet. 
+	Die Sonden werden anfangs mit einem TTL von 1 versendet, die TTL wird um 1 erhoeht bis eine ICMP "port unreachable" Nachricht bekommen wird (was bedeutet das der Host wurde erreicht wurde).
+	
+	Quelle: linux: man traceroute
+
+    
+       - verfahren Sie ebenso mit --> traceroute www.uni-kaiserslautern.de <--
+
+	tcpdump: $1>tcpdump -i eth0 icmp	$2>traceroute www.uni-kaiserslautern.de
+	wireshark: filter "icmp" einstellen (oder "UDP" ?)	$2>traceroute www.uni-kaiserslautern.de
+    
+              * Welche Unterschiede finden Sie zwischen den beiden traceroute-Protokollen
+	        und koennen Sie die erklaeren ? 
+
+	Beim ersten Versuch ("traceroute www-stl.htwsaar.de") wird die Meldung Port Unreachable gleich ausgegeben, der Host wird gleich erreicht.
+	Beim 2. Versuch wird zuerst eine "Time Exceeded" Nachricht wiedergegeben. Es konnten Router identifziert werden (?).
+    
