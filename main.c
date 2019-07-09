@@ -9,8 +9,8 @@ void ticket(){
 	scanf("%f", &nettoPreis);
 
 	mwst = nettoPreis * 0.2;
-	skonto = brutoPreis * 0.02;
 	brutoPreis = nettoPreis * 1.2;
+	skonto = brutoPreis * 0.02;
 	rechnungsbetrag = brutoPreis * 0.98;
 
 	printf(	"\n\n\tNettopreis Euro %.2f \n"
