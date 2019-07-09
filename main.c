@@ -47,38 +47,63 @@ void fibonacci(int n){
 
 void limits()
 {
-	printf("Minimum Signed Char %d\n",-(char)((unsigned char) ~0 >> 1) - 1);
-    printf("Maximum Signed Char %d\n",(char) ((unsigned char) ~0 >> 1));
-    printf("limits.h Signed Char MAX %d\n", CHAR_MAX);
-    printf("limits.h Signed Char MIN %d\n\n", CHAR_MIN);
+
+//char
+
+	char a = 0;
+
+	while(a >= 0){
+		a++;
+	};
+	printf("Min char : %d\n", a);
+	printf("Max char : %d\n", --a);
+	printf("limits.h char MIN: %d\n", CHAR_MIN);
+	printf("limits.h char MAX: %d\n\n", CHAR_MAX);
+
+//int
+
+	int b = 0;
+
+	while(b >= 0){
+		b++;
+	};
+	printf("Min int : %d\n", b);
+	printf("Max int : %d\n", --b);
+	printf("limits.h int MIN: %d\n", INT_MIN);
+	printf("limits.h int MAX: %d\n\n", INT_MAX);
+
+//short
+	short c = 0;
+
+	while(c >= 0){
+		c++;
+	};
+	printf("Min short : %d\n", c);
+	printf("Max short : %d\n", --c);
+	printf("limits.h short MIN: %d\n", SHRT_MIN);
+	printf("limits.h short MAX: %d\n\n", SHRT_MAX);
 
 
-    printf("Minimum Signed Short %d\n",-(short)((unsigned short)~0 >>1) -1);
-    printf("Maximum Signed Short %d\n",(short)((unsigned short)~0 >> 1));
-    printf("limits.h Signed Short MAX %d\n", SHRT_MAX);
-	printf("limits.h Signed Short MIN %d\n\n", SHRT_MIN);
+//------------------unsigned------------------
 
-    printf("Minimum Signed Int %d\n",-(int)((unsigned int)~0 >> 1) -1);
-    printf("Maximum Signed Int %d\n",(int)((unsigned int)~0 >> 1));
-    printf("limits.h Signed Int MAX %d\n", INT_MAX);
-    printf("limits.h Signed Int MIN %d\n\n", INT_MIN);
+//unsigned char
 
-    printf("Minimum Signed Long %ld\n",-(long)((unsigned long)~0 >>1) -1);
-    printf("Maximum signed Long %ld\n",(long)((unsigned long)~0 >> 1));
-    printf("limits.h Signed Long MAX %ld\n", LONG_MAX);
-    printf("limits.h Signed Long MIN %ld\n\n", LONG_MIN);
+	unsigned char e = 0;
+	printf("Max unsigned char : %d\n", --e);
+	printf("limits.h Unsigned Char MAX: %d\n\n", UCHAR_MAX);
 
-    /* Unsigned Maximum Values */
 
-    printf("Maximum Unsigned Char %d\n",(unsigned char)~0);
-    printf("Maximum Unsigned Short %d\n",(unsigned short)~0);
-    printf("limits.h Unsigned Char MAX %d\n", UCHAR_MAX);
-    printf("limits.h Unsigned Short MIN %d\n\n", USHRT_MAX);
+//unsigned int
 
-    printf("Maximum Unsigned Int %u\n",(unsigned int)~0);
-    printf("Maximum Unsigned Long %lu\n",(unsigned long)~0);
-    printf("limits.h Unsigned Int MAX %d\n", UINT_MAX);
-    printf("limits.h Unsigned Long MAX %ld\n\n", ULONG_MAX);
+	unsigned int f = 0;
+	printf("Max unsigned int : %u\n", --f);
+	printf("limits.h Unsigned Int MAX: %u\n\n", UINT_MAX);
+
+//unsigned short
+
+	unsigned short d = 0;
+	printf("Max unsigned short : %d\n", --d);
+	printf("limits.h Unsigned Short MAX: %d \n\n", USHRT_MAX);
 }
 
 int main()
