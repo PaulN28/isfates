@@ -27,7 +27,7 @@ void fibonacci(int n){
 
 	long current = 1;
 	long previous = 0;
-	const max_fib_long = 7540113804746346429;
+	const long max_fib_long = 7540113804746346429;
 
 	printf("%ld\n", previous);
 
