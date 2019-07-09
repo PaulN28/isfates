@@ -14,7 +14,7 @@ void ticket(){
 	rechnungsbetrag = brutoPreis * 0.98;
 
 	printf(	"\n\n\tNettopreis Euro %.2f \n"
-	     	"\t+ 20% MwSt Euro %.2f \n"
+	     	"\t+ 20%% MwSt Euro %.2f \n"
 		    "\t===================================== \n"
 		    "\tBruttopreis Euro %.2f \n"
 		    "\t- 2%% Skonto Euro %.2f \n"
